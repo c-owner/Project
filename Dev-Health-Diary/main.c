@@ -8,13 +8,13 @@
 
 struct data {
    char cName[8]; //운동명 
-   char cTel[16]; // 운동 
+   char cTel[16]; // 
    char cAddr[32];
 };
 
 struct day {
-	char cDay[6];    // 날짜
-	char cTime[4]; // 시간 
+	int cDay[6];    // 날짜
+	int time[4]; // 시간 
 };
 
 //함수 선언 

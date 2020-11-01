@@ -1,16 +1,14 @@
 ﻿  Main.c
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(57,13): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(122,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(141,9): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(151,17): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(165,5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(167,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(193,5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(195,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(219,17): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(253,13): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(256,17): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(260,37): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(261,30): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(282,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(28,34): warning C4013: 'malloc'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(28,64): warning C4312: '형식 캐스트': 'int'에서 더 큰 'Health *'(으)로의 변환입니다.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(42,9): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(22,10): warning C4101: 'health_day' :참조되지 않은 지역 변수입니다.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(54,13): warning C4477: 'scanf_s' : 서식 문자열 '%c'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'size_t'입니다.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(54,13): message : 이 인수는 버퍼 크기로 사용됩니다.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(56,13): warning C4477: 'scanf_s' : 서식 문자열 '%d'에 'int *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'unsigned int'입니다.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(56,44): warning C4474: 'scanf_s' : 서식 문자열에 전달된 인수가 너무 많습니다.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(56,44): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 2개가 제공되었습니다.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(58,13): warning C4477: 'scanf_s' : 서식 문자열 '%d'에 'int *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'unsigned int'입니다.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(58,46): warning C4474: 'scanf_s' : 서식 문자열에 전달된 인수가 너무 많습니다.
+D:\hoon\GitHub Project\Project\Helath_Diary\Main.c(58,46): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 2개가 제공되었습니다.
   Helath_Diary.vcxproj -> D:\hoon\GitHub Project\Project\Helath_Diary\x64\Debug\Helath_Diary.exe
