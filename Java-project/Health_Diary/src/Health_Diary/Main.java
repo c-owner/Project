@@ -2,6 +2,7 @@ package Health_Diary;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class WorkOut {
@@ -62,7 +63,11 @@ class WorkOut {
 	}
 	
 	void workoutView() {
-	System.out.println("["+this.name+"]이(가) ["+this.set+"]세트["+this.sec+"]초로 추가 되었습니다.");	
+	if (cnt > 0 || sec <= 0 ) {
+	System.out.println("["+this.name+"]이(가) ["+this.set+"세트] ["+this.cnt+"개]로 추가 되었습니다.");	
+		} else if ( sec > 0 || cnt <= 0) {
+	System.out.println("["+this.name+"]이(가) ["+this.set+"세트] ["+this.sec+"초]로 추가 되었습니다.");	
+		}
 	}
 }
 
@@ -105,11 +110,10 @@ public class Main {
 		
  // 다형성을 이용할 것임
 		// 생성자 
-		 WorkOut wo = new WorkOut(); 
+		WorkOut WO = new WorkOut();
+		ArrayList<WorkOut> wo = new ArrayList<WorkOut>();
 		Memo me = new Memo();
-		
 		//배열 구현
-		
 		while ( true ) {
 
 			System.out.println("============메인 메뉴============");
@@ -120,11 +124,12 @@ public class Main {
 			System.out.print("입력 >  ");
 			int act = sc.nextInt();
 			if ( act == 1 ) {
-				wo.workoutAdd();
+				WO.workoutAdd();
 			} else if ( act == 2 ) {
-				wo.workoutDel();
+				WO.workoutDel();
 			} else if ( act == 3 ) {
-				wo.workoutView(); 
+				System.out.println(wo);
+				WO.workoutView(); 
 			} else if ( act == 4 ) {
 				
 			} else if ( act == 5 ) {
