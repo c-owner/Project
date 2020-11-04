@@ -1,11 +1,11 @@
-package Health_Diary;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.Scanner;
  
+// 다형성을 이용할 것임
+
 class Memo { // 기록 클래스 운동을 상속받아 운동 리스트를 호출할 예정
 	Scanner sc = new Scanner(System.in);
 	int day,time; // 날짜와 운동한 시간이 필요  
@@ -18,13 +18,15 @@ class Memo { // 기록 클래스 운동을 상속받아 운동 리스트를 호�
 		String txt;     // 기록용 변수 선언
 		   System.out.print("기록하실 내용을 입력하세요 : ");
 			 txt = sc.nextLine(); // 기록을 하기 위한 입력값
+			 // 아니 근데 줄바꿈 좀 하고싶은데..
 		    String fileName = "/Users/iyu/Desktop//DiaryMemo.txt";
 		        try{
 		            // BufferedWriter / FileWriter를 조합 사용 (속도 향상)
 		            BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
-		           
 		            fw.write(txt);
-		            fw.flush();
+		            fw.write("\r"); // 줄바꿈 !!
+		            fw.flush(); // stream에 남아있는 데이터를 강제로 내보내기 
+// ex) 수도꼭지 잠그면 호스에 물이 고여있는 것을 빼내기 위해 들어올리는 작업같은 느낌
 		            fw.close();
 		        } catch(Exception e){
 		            e.printStackTrace();
@@ -32,13 +34,15 @@ class Memo { // 기록 클래스 운동을 상속받아 운동 리스트를 호�
 		        System.out.println();
 	}
 	void memoDel() { // 기록 특정 부분 삭제하는 함수 구현을 하고싶은데 흠흠..
-		 
+		  // 흠흠.. !! ^^ 
 	}
-	public void memoView() {
+	public void memoView1() { // mac 조회  
 	System.out.println("==== 기록일지 오픈 ====");
 	 try{ // 예외 처리
          //파일 객체 생성
-         File file = new File("/Users/iyu/Desktop//DiaryMemo.txt");
+         File file = new File("/Users/iyu/Desktop//DiaryMemo.txt"); // MAC버전
+//        File file = new File("C:\\Users\\Desktop\\WorkOut_Beta.txt"); // windows 버전          
+         
          //스캐너로 파일 읽기
          Scanner scan = new Scanner(file);
          while(scan.hasNextLine()){
@@ -48,6 +52,11 @@ class Memo { // 기록 클래스 운동을 상속받아 운동 리스트를 호�
          // TODO: handle exception
      }
 	}
+	
+	public void memoView2() {
+		
+	}
+	
 }
 
 public class Main {
@@ -124,57 +133,3 @@ public class Main {
 		}
 	}
 }
-		/*
- // 다형성을 이용할 것임
-		// 생성자 
-		ArrayList<WorkOut> wo = new ArrayList<WorkOut>();
-		int index = 0;
-		WorkOut WO = new WorkOut();
-		Memo me = new Memo();
-		
-		//배열 구현
-		while ( true ) {
-
-			System.out.println("============메인 메뉴============");
-			System.out.print("1.운동 추가 | 2.운동 삭제 | 3.운동 조회 "
-							+ "\n4.기록 조회 | 5.기록 저장 | 6.기록 삭제");
-			System.out.print("\n 프로그램을 종료하려면 0번");
-			System.out.println("\n===============================");
-			System.out.print("입력 >  ");
-			
-			int act = sc.nextInt();
-			if ( act == 1 ) {
-				WO.workoutAdd();
-			} else if ( act == 2 ) {
-				WO.workoutDel();
-			} else if ( act == 3 ) {
-				for (WorkOut wl : wo) {
-					System.out.println(wl);
-				}
-				WO.workoutView(); 
-			} else if ( act == 4 ) {
-				me.memoView();
-			} else if ( act == 5 ) {
-				me.memo();
-			} else if ( act == 6 ) {
-				me.memoDel();
-			} else if ( act == 0 ) {
-				System.out.println("\n\n\n\n\n\n\n\n\n\n"
-						+ " ★★프로그램을 종료합니다.★★");
-				break;
-			} else {
-				int cls = 0;
-				for (cls = 0; cls < 15; cls++) {
-					System.out.println(); // 화면 클리어 
-				} 
-				System.out.println("WARNING : : 제대로 다시 입력하세요!!");
-				for (cls = 0; cls < 5; cls++) {
-					System.out.println(); // 화면 클리어 
-					}
-				continue;
-				}
-			}
-		
-	}
-}
-*/
