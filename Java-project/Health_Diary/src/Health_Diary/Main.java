@@ -18,6 +18,7 @@ class WorkOut {
 	void workoutAdd () { // 운동 추가 함수 
 		System.out.println("\n\n운동을 추가하시겠습니까? (Y/N)");
 		String y = "y", Y = "Y", n = "n", N = "N"; // 결정 변수
+		sc.nextLine(); // 버퍼 방지
 		String sel = sc.nextLine(); 
 		if (sel.equals(y) || sel.equals(Y)) {
 			System.out.println("\n\n 진행합니다. ");
@@ -64,9 +65,9 @@ class WorkOut {
 	
 	void workoutView() {
 	if (cnt > 0 || sec <= 0 ) {
-	System.out.println("["+this.name+"]이(가) ["+this.set+"세트] ["+this.cnt+"개]로 추가 되었습니다.");	
+	System.out.println("["+this.name+"]이(가) ["+this.set+"세트] ["+this.cnt+"개]");	
 		} else if ( sec > 0 || cnt <= 0) {
-	System.out.println("["+this.name+"]이(가) ["+this.set+"세트] ["+this.sec+"초]로 추가 되었습니다.");	
+	System.out.println("["+this.name+"]이(가) ["+this.set+"세트] ["+this.sec+"초]");	
 		}
 	}
 }
@@ -110,9 +111,10 @@ public class Main {
 		
  // 다형성을 이용할 것임
 		// 생성자 
-		WorkOut WO = new WorkOut();
 		ArrayList<WorkOut> wo = new ArrayList<WorkOut>();
+		WorkOut WO = new WorkOut();
 		Memo me = new Memo();
+		
 		//배열 구현
 		while ( true ) {
 
@@ -122,13 +124,13 @@ public class Main {
 			System.out.print("\n 프로그램을 종료하려면 0번");
 			System.out.println("\n===============================");
 			System.out.print("입력 >  ");
+			
 			int act = sc.nextInt();
 			if ( act == 1 ) {
 				WO.workoutAdd();
 			} else if ( act == 2 ) {
 				WO.workoutDel();
 			} else if ( act == 3 ) {
-				System.out.println(wo);
 				WO.workoutView(); 
 			} else if ( act == 4 ) {
 				
