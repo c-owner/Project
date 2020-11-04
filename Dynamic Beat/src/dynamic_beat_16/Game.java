@@ -88,7 +88,7 @@ public class Game extends Thread {
 		g.setColor(Color.white);
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		g.setFont(new Font("Arial", Font.BOLD, 30));
-		g.drawString(titleName, 20, 702); // °î¿¡ ´ëÇÑ Á¤º¸
+		g.drawString(titleName, 20, 702); // ï¿½î¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		g.drawString(difficulty, 1190, 702);
 		g.setColor(Color.DARK_GRAY);
 		g.drawString("A", 270, 609);
@@ -216,7 +216,7 @@ public class Game extends Thread {
 		Beat[] beats = null;
 		if (titleName.equals("Avenged Sevenfold - Afterlife") && difficulty.equals("Easy")) {
 			int startTime = 15460 - Main.REACH_TIME * 1000;
-			int gap = 110; // ¹ÚÀÚÀÇ °£°Ý
+			int gap = 110; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			beats = new Beat[] { new Beat(startTime + gap * 2, "D"), new Beat(startTime + gap * 4, "S"),
 					new Beat(startTime + gap * 6, "D"), new Beat(startTime + gap * 8, "S"),
 					new Beat(startTime + gap * 8, "A"), new Beat(startTime + gap * 10, "1"),
@@ -226,7 +226,7 @@ public class Game extends Thread {
 					new Beat(startTime + gap * 24, "S") };
 		} else if (titleName.equals("Avenged Sevenfold - Afterlife") && difficulty.equals("Hard")) {
 			int startTime = 4460 - Main.REACH_TIME * 1000;
-			int gap = 125; // ¹ÚÀÚÀÇ °£°Ý
+			int gap = 125; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			beats = new Beat[] { new Beat(startTime + gap * 2, "D"), new Beat(startTime + gap * 4, "S"),
 					new Beat(startTime + gap * 6, "D"), new Beat(startTime + gap * 8, "S"),
 					new Beat(startTime + gap * 8, "A"), new Beat(startTime + gap * 10, "1"),
@@ -236,7 +236,7 @@ public class Game extends Thread {
 					new Beat(startTime + gap * 24, "S") };
 		} else if (titleName.equals("Avenged Sevenfold - Hail To The King") && difficulty.equals("Easy")) {
 			int startTime = 11000 - Main.REACH_TIME * 1000;
-			int gap = 115; // ¹ÚÀÚÀÇ °£°Ý
+			int gap = 115; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			beats = new Beat[] { 
 					new Beat(startTime + gap, "D"),
 					new Beat(startTime + gap * 9, "D"), 
@@ -334,12 +334,18 @@ public class Game extends Thread {
 					new Beat(startTime + gap * 292, "Space"),
 					new Beat(startTime + gap * 294, "D"),
 					new Beat(startTime + gap * 294, "Space"),
+					new Beat(startTime + gap * 296, "A"),
+					new Beat(startTime + gap * 296, "D"),
+					new Beat(startTime + gap * 298, "A"),
+					new Beat(startTime + gap * 298, "3"),
+					new Beat(startTime + gap * 300, "S"),
+					new Beat(startTime + gap * 300, "2"),
 					
 					
 			};  
 		}else if (titleName.equals("Avenged Sevenfold - Hail To The King") && difficulty.equals("Hard")) {
 			int startTime = 4460 - Main.REACH_TIME * 1000;
-			int gap = 125; // ¹ÚÀÚÀÇ °£°Ý
+			int gap = 125; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			beats = new Beat[] { 	
 					new Beat(startTime + gap, "D"),
 					new Beat(startTime + gap * 9, "D"), 
@@ -385,7 +391,7 @@ public class Game extends Thread {
 		}
 		else if (titleName.equals("Sum41 - Still Waiting") && difficulty.equals("Easy")) {
 			int startTime = 4460 - Main.REACH_TIME * 1000;
-			int gap = 125; // ¹ÚÀÚÀÇ °£°Ý
+			int gap = 125; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			beats = new Beat[] { new Beat(startTime + gap * 2, "D"), new Beat(startTime + gap * 4, "S"),
 					new Beat(startTime + gap * 6, "D"), new Beat(startTime + gap * 8, "S"),
 					new Beat(startTime + gap * 8, "A"), new Beat(startTime + gap * 10, "1"),
@@ -395,7 +401,7 @@ public class Game extends Thread {
 					new Beat(startTime + gap * 24, "S") };
 		} else if (titleName.equals("Sum41 - Still Waiting") && difficulty.equals("Hard")) {
 			int startTime = 4460 - Main.REACH_TIME * 1000;
-			int gap = 125; // ¹ÚÀÚÀÇ °£°Ý
+			int gap = 125; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			beats = new Beat[] { new Beat(startTime + gap * 2, "D"), new Beat(startTime + gap * 4, "S"),
 					new Beat(startTime + gap * 6, "D"), new Beat(startTime + gap * 8, "S"),
 					new Beat(startTime + gap * 8, "A"), new Beat(startTime + gap * 10, "1"),
@@ -461,4 +467,5 @@ public class Game extends Thread {
 	}
 
 }
+
 
