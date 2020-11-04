@@ -13,7 +13,7 @@ class Memo { // 기록 클래스 운동을 상속받아 운동 리스트를 호�
 	 public Memo() {
 		 super();
 	}
-	void memo() { 
+	void memo1() {  // mac 버전 
 		
 		String txt;     // 기록용 변수 선언
 		   System.out.print("기록하실 내용을 입력하세요 : ");
@@ -33,11 +33,30 @@ class Memo { // 기록 클래스 운동을 상속받아 운동 리스트를 호�
 		        } 
 		        System.out.println();
 	}
+void memo2() {  // windows 버전 
+		
+		String txt;     // 기록용 변수 선언
+		   System.out.print("기록하실 내용을 입력하세요 : ");
+			 txt = sc.nextLine(); // 기록을 하기 위한 입력값
+		    String fileName = ("C:\\Users\\Desktop\\WorkOut_Beta.txt");
+		        try{
+		            // BufferedWriter / FileWriter를 조합 사용 (속도 향상)
+		            BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
+		            fw.write(txt);
+		            fw.write("\r"); // 줄바꿈 !!
+		            fw.flush(); // stream에 남아있는 데이터를 강제로 내보내기 
+// ex) 수도꼭지 잠그면 호스에 물이 고여있는 것을 빼내기 위해 들어올리는 작업같은 느낌
+		            fw.close();
+		        } catch(Exception e){
+		            e.printStackTrace();
+		        } 
+		        System.out.println();
+	}
 	void memoDel() { // 기록 특정 부분 삭제하는 함수 구현을 하고싶은데 흠흠..
 		  // 흠흠.. !! ^^ 
 	}
 	public void memoView1() { // mac 조회  
-	System.out.println("==== 기록일지 오픈 ====");
+	System.out.println("====MAC 기록일지 오픈 ====");
 	 try{ // 예외 처리
          //파일 객체 생성
          File file = new File("/Users/iyu/Desktop//DiaryMemo.txt"); // MAC버전
@@ -53,9 +72,21 @@ class Memo { // 기록 클래스 운동을 상속받아 운동 리스트를 호�
      }
 	}
 	
-	public void memoView2() {
-		
-	}
+	public void memoView2() { // Windows
+		System.out.println("====Windows 기록일지 오픈 ====");
+		 try{ // 예외 처리
+	         //파일 객체 생성
+	        File file2 = new File("C:\\Users\\Desktop\\WorkOut_Beta.txt"); // windows 버전          
+	         
+	         //스캐너로 파일 읽기
+	         Scanner scan = new Scanner(file2);
+	         while(scan.hasNextLine()){
+	             System.out.println(scan.nextLine());
+	         }
+	     }catch (FileNotFoundException e) {
+	         // TODO: handle exception
+	     }
+		}
 	
 }
 
@@ -67,6 +98,10 @@ public class Main {
 		WorkoutArrayList list = new WorkoutArrayList();
 		Memo me = new Memo();
 
+		
+		String win = "w",WIN="W",mac="m",MAC="M";
+		String wm; // os 선택 변수 
+		
 		boolean cnd = true;
 		while (cnd ) {
 			System.out.println("============메인 메뉴============  |");
@@ -112,11 +147,28 @@ public class Main {
 				break;
 				
 			case 4: // 기록 조회 
-				me.memoView();
+				System.out.println("사용자 컴퓨터가 Windows라면 w를 입력 "
+						+ "\n Unix라면 m 입력 ");
+				wm = sc.nextLine();
+				
+				if ( wm.equals(win) || wm.equals(WIN)) {
+					me.memoView2();	
+				} else if ( wm.equals(mac) || wm.equals(MAC)) {
+					me.memoView1();
+				}
+				
 				break;
 			case 5: // 기록 저장 
 				System.out.println("기록을 저장하기 전 안내 메시지");
-				me.memo();
+				
+				System.out.println("사용자 컴퓨터가 Windows라면 w를 입력 "
+						+ "\n Unix라면 m 입력 ");
+				wm = sc.nextLine();
+				if ( wm.equals(win) || wm.equals(WIN)) {
+					me.memo2();	
+				} else if ( wm.equals(mac) || wm.equals(MAC)) {
+					me.memo1();
+				}
 				break;
 			case 0:
 				cnd = false;
