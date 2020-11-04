@@ -1,6 +1,6 @@
 # Project
 
-MiniProject_Beta1.0a 
+MiniProject_Beta1.0b
 
 == MAC OS 버전 ==
 - 기능 구현 완성
