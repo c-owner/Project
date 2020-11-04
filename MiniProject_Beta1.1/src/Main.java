@@ -39,7 +39,8 @@ void memo2() {  // windows 버전
 		String txt;     // 기록용 변수 선언
 		   System.out.print("기록하실 내용을 입력하세요 : ");
 			 txt = sc.nextLine(); // 기록을 하기 위한 입력값
-		    String fileName = ("C:\\Users\\Desktop\\WorkOut_Beta.txt");
+		    String fileName = ("D:\\hoon\\WorkOut_Beta.txt");
+		    // 무조건 memoView2 함수도 경로 변경 해줄것
 		        try{
 		            // BufferedWriter / FileWriter를 조합 사용 (속도 향상)
 		            BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
@@ -74,8 +75,8 @@ void memo2() {  // windows 버전
 		System.out.println("====Windows 기록일지 오픈 ====");
 		 try{ // 예외 처리
 	         //파일 객체 생성
-	        File file2 = new File("C:\\Users\\Desktop\\WorkOut_Beta.txt"); // windows 버전          
-	         
+	        File file2 = new File("D:\\hoon\\WorkOut_Beta.txt"); // windows 버전          
+	         // 무조건 memo2 함수도 경로 변경 해줄것
 	         //스캐너로 파일 읽기
 	         Scanner scan = new Scanner(file2);
 	         while(scan.hasNextLine()){
