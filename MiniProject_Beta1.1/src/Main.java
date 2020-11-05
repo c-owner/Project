@@ -3,8 +3,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.Scanner;
- 
-// 다형성을 이용할 것임
 //미니 프로젝트에 걸맞게 미니미니하게 구현
 
 class Memo { // 기록 클래스 운동을 상속받아 운동 리스트를 호출할 예정

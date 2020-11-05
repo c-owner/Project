@@ -8,7 +8,6 @@ public class WorkOut {  // 운동 관리 클래스
 		this.workName = workName; this.workSet = workSet;
 		this.workCnt = workCnt; this.workSec = workSec;
 	}
- 
 	
 	public String toString() {
 		return "["+ workName + "] ["+workSet+" 세트] ["+workCnt+" 개] ["+workSec+" 초]";
