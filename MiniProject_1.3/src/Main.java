@@ -152,11 +152,14 @@ public class Main {
 							me.memoDeleteWin(); //메모 삭제 함수 진행
 						} else { 
 							System.out.println("삭제를 중지합니다.");
+							break;
 						}
 					} else if ( a.equals(n) || a.equals(N) ) {
 						System.out.println("삭제를 중지합니다.");
+						break;
 					} else {
 						System.out.println("다시 입력하세요.");
+						break;
 					}
 				} else if (os.contains("mac")) {
 					System.out.println("사용자의 운영체제는 Mac OS입니다.\n\t *** Warning ***");
@@ -177,6 +180,7 @@ public class Main {
 						break;
 					} else {
 						System.out.println("다시 입력하세요.");
+						break;
 					}
 				}
 				break;
