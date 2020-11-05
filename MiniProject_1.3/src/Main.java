@@ -129,7 +129,7 @@ public class Main {
 					me.memo2(); // 윈도우 메모 
 				} else if (os.contains("mac")) {
 					System.out.println("사용자의 운영체제는 Mac OS입니다.");
-					me.memo1();
+					me.memo1(); 
 				}
 				break;
 			case 6: // 기록 삭제
