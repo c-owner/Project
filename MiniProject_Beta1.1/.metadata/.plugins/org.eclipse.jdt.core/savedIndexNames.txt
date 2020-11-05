@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+D:\hoon\GitHub Project\Project\MiniProject_Beta1.1\.metadata\.plugins\org.eclipse.jdt.core
-3803929003.index
-1067094681.index
