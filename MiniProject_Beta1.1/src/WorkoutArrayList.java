@@ -27,8 +27,10 @@ public class WorkoutArrayList {
 					return;
 				}
 			}
-			System.out.println(Name + " 운동이 존재하지 않습니다.");
+			System.out.println(Name + " 운동이 존재하지 않습니다.\n"
+					+ "조회를 통해 다시 확인 해보세요.");
 			return ;
+			
 		}
 		
 		public void showAllWorkout() {
