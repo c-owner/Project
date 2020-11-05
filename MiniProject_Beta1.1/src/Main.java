@@ -37,7 +37,7 @@ void memo2() {  // windows 버전
 		String txt;     // 기록용 변수 선언
 		   System.out.print("기록하실 내용을 입력하세요 : ");
 			 txt = sc.nextLine(); // 기록을 하기 위한 입력값
-			 String fileName = ("C:\\hoon\\WorkOut_Beta.txt");
+			 String fileName = ("C:\\hoon\\Project\\WorkOut_Diary.txt");
 //		    String fileName = ("D:\\hoon\\WorkOut_Beta.txt");
 		    // 무조건 memoView2 함수도 경로 변경 해줄것
 		        try{
@@ -76,7 +76,7 @@ void memo2() {  // windows 버전
 		System.out.println("====Windows 기록일지 오픈 ====");
 		 try{ // 예외 처리
 	         //파일 객체 생성
-	        File file2 = new File("C:\\hoon\\WorkOut_Beta.txt"); // windows 버전          
+	        File file2 = new File("C:\\hoon\\Project\\WorkOut_Diary.txt"); // windows 버전          
 //	        File file2 = new File("D:\\hoon\\WorkOut_Beta.txt");
 	         // 무조건 memo2 함수도 경로 변경 해줄것
 	        
