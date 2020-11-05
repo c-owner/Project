@@ -1,2 +1,0 @@
-D:\hoon\GitHub Project\Project\Helath_Diary\x64\Debug\Helath_Diary.exe
-D:\hoon\GitHub Project\Project\Helath_Diary\x64\Debug\Helath_Diary.pdb
