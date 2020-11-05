@@ -147,16 +147,14 @@ public class Main {
 					String a = sc.nextLine();
 					if ( a.equals(y) || a.equals(Y) ) {
 						System.out.print("\n *** LAST WARNING ***\n    정말 삭제합니까?\n 입력 >");
-						a = sc.nextLine();
-						if ( a.equals(y) || a.equals(Y) ) {
+						String a2 = sc.nextLine();
+						if ( a2.equals(y) || a2.equals(Y) ) {
 							me.memoDeleteWin(); //메모 삭제 함수 진행
 						} else { 
 							System.out.println("삭제를 중지합니다.");
-							break;
 						}
 					} else if ( a.equals(n) || a.equals(N) ) {
 						System.out.println("삭제를 중지합니다.");
-						break;
 					} else {
 						System.out.println("다시 입력하세요.");
 					}
