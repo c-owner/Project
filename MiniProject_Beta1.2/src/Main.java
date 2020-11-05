@@ -1,96 +1,5 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.util.Scanner;
 //미니 프로젝트에 걸맞게 미니미니하게 구현
-
-class Memo { // 기록 클래스 운동을 상속받아 운동 리스트를 호출할 예정
-	Scanner sc = new Scanner(System.in);
-	int day,time; // 날짜와 운동한 시간이 필요  
-
-	 public Memo() {
-		 super();
-	}
-	void memo1() {  // mac 버전 
-		
-		String txt;     // 기록용 변수 선언
-		   System.out.print("기록하실 내용을 입력하세요 : ");
-			 txt = sc.nextLine(); // 기록을 하기 위한 입력값
-			 // 아니 근데 줄바꿈 좀 하고싶은데..
-		    String fileName = "/Users/iyu/Desktop/GitHub Project/Project//DiaryMemo.txt";
-		        try{
-		            // BufferedWriter / FileWriter를 조합 사용 (속도 향상)
-		            BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
-		            fw.write(txt);
-		            fw.write("\r"); // 줄바꿈 !! 중요!★
-		            fw.flush(); // stream에 남아있는 데이터를 강제로 내보내기 
-// ex) 수도꼭지 잠그면 호스에 물이 고여있는 것을 빼내기 위해 들어올리는 작업같은 느낌
-		            fw.close();
-		        } catch(Exception e){
-		            e.printStackTrace();
-		        } 
-		        System.out.println();
-	}
-void memo2() {  // windows 버전 
-		
-		String txt;     // 기록용 변수 선언
-		   System.out.print("기록하실 내용을 입력하세요 : ");
-			 txt = sc.nextLine(); // 기록을 하기 위한 입력값
-			 String fileName = ("C:\\hoon\\Project\\WorkOut_Diary.txt");
-//		    String fileName = ("D:\\hoon\\WorkOut_Beta.txt");
-		    // 무조건 memoView2 함수도 경로 변경 해줄것
-		        try{
-		            // BufferedWriter / FileWriter를 조합 사용 (속도 향상)
-		            BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
-		            fw.write(txt);
-		            fw.write("\r"); // 줄바꿈 !!
-		            fw.flush(); // stream에 남아있는 데이터를 강제로 내보내기 
-// ex) 수도꼭지 잠그면 호스에 물이 고여있는 것을 빼내기 위해 들어올리는 작업같은 느낌
-		            fw.close();
-		        } catch(Exception e){
-		            e.printStackTrace();
-		        } 
-		        System.out.println();
-	}
-
-	public void memoView1() { // mac 조회  
-	System.out.println("====MAC 기록일지 오픈 ====");
-	 try{ // 예외 처리
-         //파일 객체 생성
-         File file = new File("/Users/iyu/Desktop/GitHub Project/Project//DiaryMemo.txt"); // MAC버전
-//        File file = new File("C:\\Users\\Desktop\\WorkOut_Beta.txt"); // windows 버전          
-         
-         //스캐너로 파일 읽기
-         Scanner scan = new Scanner(file);
-         while(scan.hasNextLine()){
-             System.out.println(scan.nextLine());
-         }
-     }catch (FileNotFoundException e) {
-         // TODO: handle exception
-     }
- 
-	 
-	}
-	public void memoView2() { // Windows
-		System.out.println("====Windows 기록일지 오픈 ====");
-		 try{ // 예외 처리
-	         //파일 객체 생성
-	        File file2 = new File("C:\\hoon\\Project\\WorkOut_Diary.txt"); // windows 버전          
-//	        File file2 = new File("D:\\hoon\\WorkOut_Beta.txt");
-	         // 무조건 memo2 함수도 경로 변경 해줄것
-	        
-	         //스캐너로 파일 조회  
-	         Scanner scan = new Scanner(file2);
-	         while(scan.hasNextLine()){
-	             System.out.println(scan.nextLine());
-	         }
-	     }catch (FileNotFoundException e) {
-	         // TODO: handle exception
-	     }
-		}
-	
-}
 
 public class Main {
 
@@ -101,7 +10,9 @@ public class Main {
 		Memo me = new Memo();
 		
 		
-		String win = "w",WIN="W",mac="m",MAC="M";
+		final String y = "y",Y="Y",N="N",n="n",P="P",p="p";
+		// 자주 사용하는 선택문 클래스 선언
+		
 		String wm; // os 선택 변수 
 		
 		boolean cnd = true;
@@ -111,20 +22,20 @@ public class Main {
 			if (os.contains("win")) {
 				System.out.println("User OS : Windows"); 
 			} 
-			else if (os.contains("mac")) 
-			{ System.out.println("User OS : Mac"); 
-			}else if (os.contains("nix") || os.contains("nux") || os.contains("aix")) 
-			{ System.out.println("User OS : Unix"); 
+			else if (os.contains("mac")) { 
+				System.out.println("User OS : Mac"); 
+			} else if (os.contains("nix") || os.contains("nux") || os.contains("aix")) { 
+				System.out.println("User OS : Unix"); 
 			} else if (os.contains("linux")) { 
 				System.out.println("User OS : Linux");
 			} else if (os.contains("sunos")) { 
 				System.out.println("User OS : Solaris");
 			}
-		
+
 			System.out.println("============메인 메뉴============ ");
 			System.out.print("1.운동 추가 | 2.운동 삭제 | 3.운동 조회   \n"
-							+"4.기록 조회 | 5.기록 저장 | 6. CLEAR  \n"
-							+"0. Program EXIT....             \n");
+							+"4.기록 조회 | 5.기록 저장 | 6.기록 삭제   \n"
+							+"7.Clear   | 0. Program EXIT....    \n");
 			System.out.println("\n===============================");
 			System.out.print("입력 >  ");
 			int sel = sc.nextInt();
@@ -178,7 +89,7 @@ public class Main {
 					System.out.println(); // 화면 클리어 
 					}
 				list.showAllWorkout(); // 조회 
-				System.out.println();// 줄바꿈 
+				System.out.println("------------ CLOSE -----------"); 
 				break;
 			case 4: // 기록 조회 
 				for (int cls = 0; cls < 15; cls++) { // 화면클리어 
@@ -193,7 +104,10 @@ public class Main {
 				} else if (os.contains("mac")) {
 					System.out.println("사용자의 운영체제는 Mac OS입니다.");
 					me.memoView1();
+					System.out.println("------------ CLOSE -----------");
 				}
+				System.out.println();
+				break;
 //				System.out.println("사용자 컴퓨터가 [Windows]라면 w를 입력 "
 //				+ "\n [Unix]라면 m 입력 \n"
 //				+ "***운영체제를 다르게 선택해도 진행하지만 정상적인 작동을 하지 않습니다.***");
@@ -203,8 +117,6 @@ public class Main {
 //				} else if ( wm.equals(mac) || wm.equals(MAC)) {
 //					me.memoView1();
 //				}
-				System.out.println();
-				break;
 			case 5: // 기록 저장 
 				for (int cls = 0; cls < 15; cls++) { // 화면클리어 
 					System.out.println(); // 화면 클리어 
@@ -219,19 +131,58 @@ public class Main {
 					System.out.println("사용자의 운영체제는 Mac OS입니다.");
 					me.memo1();
 				}
-//				System.out.println("기록을 저장하기 전 안내 메시지");
-//				System.out.println("사용자 컴퓨터가 [Windows]라면 w를 입력 "
-//						+ "\n [Unix]라면 m 입력 \n"
-//						+ "***운영체제를 다르게 선택해도 진행하지만 정상적인 작동을 하지 않습니다.***");
-//				wm = sc.nextLine();
-//				if ( wm.equals(win) || wm.equals(WIN)) {
-//					me.memo2();	
-//				} else if ( wm.equals(mac) || wm.equals(MAC)) {
-//					me.memo1();
-//				}
-
 				break;
-			case 6:
+			case 6: // 기록 삭제
+				for (int cls = 0; cls < 15; cls ++) {
+					System.out.println();
+				}
+				System.out.println("시스템 운영체제를 파악하고 있습니다...");
+				os = System.getProperty(
+						"os.name").toLowerCase(); 
+				if (os.contains("win")) {
+					System.out.println("사용자의 운영체제는 Windows입니다.");
+					System.out.println("사용자의 운영체제는 Mac OS입니다.\n\t *** Warning ***");
+					System.out.println("*** 진행하면 되돌릴 수 없습니다. 그래도 진행하시겠습니까? ***");
+					System.out.println("\t Y / N "); // YES Next <-> No Previous
+					String a = sc.nextLine();
+					if ( a.equals(y) || a.equals(Y) ) {
+						System.out.println(" *** LAST WARNING ***\n    정말 삭제합니까?\n 입력 >");
+						a = sc.nextLine();
+						if ( a.equals(y) || a.equals(Y) ) {
+							me.memoDeleteWin(); //메모 삭제 함수 진행
+						} else { 
+							System.out.println("삭제를 중지합니다.");
+							break;
+						}
+					} else if ( a.equals(n) || a.equals(N) ) {
+						System.out.println("삭제를 중지합니다.");
+						break;
+					} else {
+						System.out.println("다시 입력하세요.");
+					}
+				} else if (os.contains("mac")) {
+					System.out.println("사용자의 운영체제는 Mac OS입니다.\n\t *** Warning ***");
+					System.out.println("*** 진행하면 되돌릴 수 없습니다. 그래도 진행하시겠습니까? ***");
+					System.out.println("\t Y / N "); // YES Next <-> No Previous
+					String a = sc.nextLine();
+					if ( a.equals(y) || a.equals(Y) ) {
+						System.out.println(" *** LAST WARNING ***\n    정말 삭제합니까?\n 입력 >");
+						a = sc.nextLine();
+						if ( a.equals(y) || a.equals(Y) ) {
+							me.memoDeleteMac();//메모 삭제 함수 진행
+						} else { 
+							System.out.println("삭제를 중지합니다.");
+							break;
+						}
+					} else if ( a.equals(n) || a.equals(N) ) {
+						System.out.println("삭제를 중지합니다.");
+						break;
+					} else {
+						System.out.println("다시 입력하세요.");
+					}
+				}
+				break;
+			case 7: // 클리어
 				for(int i = 0; i < 25; i++ ) {
 					System.out.println();
 				}
