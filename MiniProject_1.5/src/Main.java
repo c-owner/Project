@@ -104,8 +104,8 @@ public class Main {
 				} else if (os.contains("mac")) {
 					System.out.println("사용자의 운영체제는 Mac OS입니다.");
 					me.memoView1();
-				
-				}	System.out.println("------------ CLOSE -----------");
+					System.out.println("------------ CLOSE -----------");
+				}
 				System.out.println();
 				break;
 //				System.out.println("사용자 컴퓨터가 [Windows]라면 w를 입력 "
