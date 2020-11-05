@@ -1,5 +1,16 @@
 import java.util.Scanner;
-//미니 프로젝트에 걸맞게 미니미니하게 구현
+/*
+미니 프로젝트에 걸맞게 미니미니하게 구현
+
+ 발견된 버그 = 여러 기능을 사용하다 기록을 삭제 할려고 하면 실패가 됨.
+  원인 : 삭제할 파일이 사용중이라서 즉각 처리가 안되는 듯 함 ===>  
+  해결 : 기록삭제는 프로그램을 재실행(Run)을 하고나서 바로 기록삭제하면 가능.
+  
+* Patch ::
+* + 기록을 작성할 때 지정된 경로가 존재하지 않다면 디렉토리까지 폴더 생성
+* + 
+*
+*/
 
 public class Main {
 
@@ -9,11 +20,10 @@ public class Main {
 		WorkoutArrayList list = new WorkoutArrayList();
 		Memo me = new Memo();
 		
-		
-		final String y = "y",Y="Y",N="N",n="n",P="P",p="p";
+		 String y = "y",Y="Y",N="N",n="n",P="P",p="p";
 		// 자주 사용하는 선택문 클래스 선언
 		
-		String wm; // os 선택 변수 
+		 String wm; // os 선택 변수 
 		
 		boolean cnd = true;
 		while (cnd ) {
@@ -108,15 +118,6 @@ public class Main {
 				}
 				System.out.println();
 				break;
-//				System.out.println("사용자 컴퓨터가 [Windows]라면 w를 입력 "
-//				+ "\n [Unix]라면 m 입력 \n"
-//				+ "***운영체제를 다르게 선택해도 진행하지만 정상적인 작동을 하지 않습니다.***");
-//				wm = sc.nextLine();
-//				if ( wm.equals(win) || wm.equals(WIN)) {
-//					me.memoView2();
-//				} else if ( wm.equals(mac) || wm.equals(MAC)) {
-//					me.memoView1();
-//				}
 			case 5: // 기록 저장 
 				for (int cls = 0; cls < 15; cls++) { // 화면클리어 
 					System.out.println(); // 화면 클리어 
@@ -126,9 +127,12 @@ public class Main {
 						"os.name").toLowerCase(); 
 				if (os.contains("win")) {
 					System.out.println("사용자의 운영체제는 Windows입니다.");
+					me.folderWindows(); // 폴더 판별 함수 호출 
+					System.out.println();
 					me.memo2(); // 윈도우 메모 
 				} else if (os.contains("mac")) {
 					System.out.println("사용자의 운영체제는 Mac OS입니다.");
+					me.folderMac();
 					me.memo1();
 				}
 				break;
@@ -146,15 +150,9 @@ public class Main {
 					System.out.println("\t Y / N "); // YES Next <-> No Previous
 					String a = sc.nextLine();
 					if ( a.equals(y) || a.equals(Y) ) {
-						System.out.print("\n *** LAST WARNING ***\n    정말 삭제합니까?\n 입력 >");
-						String a2 = sc.nextLine();
-						if ( a2.equals(y) || a2.equals(Y) ) {
-							me.memoDeleteWin(); //메모 삭제 함수 진행
-						} else { 
-							System.out.println("삭제를 중지합니다.");
-							break;
-						}
-					} else if ( a.equals(n) || a.equals(N) ) {
+						me.memoDeleteWin(); //메모 삭제 함수 진행
+						}  
+					  else if ( a.equals(n) || a.equals(N) ) {
 						System.out.println("삭제를 중지합니다.");
 						break;
 					} else {
@@ -193,7 +191,7 @@ public class Main {
 				for (int cls = 0; cls < 15; cls++) {
 					System.out.println(); // 화면 클리어 
 					}
-				cnd = false; // 무한반복문 종료지점
+				cnd = false; //   종료지점
 				System.out.println(" 프로그램을 종료합니다. ");
 				break;
 			
