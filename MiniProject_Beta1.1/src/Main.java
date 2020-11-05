@@ -39,7 +39,8 @@ void memo2() {  // windows 버전
 		String txt;     // 기록용 변수 선언
 		   System.out.print("기록하실 내용을 입력하세요 : ");
 			 txt = sc.nextLine(); // 기록을 하기 위한 입력값
-		    String fileName = ("D:\\hoon\\WorkOut_Beta.txt");
+			 String fileName = ("C:\\hoon\\WorkOut_Beta.txt");
+//		    String fileName = ("D:\\hoon\\WorkOut_Beta.txt");
 		    // 무조건 memoView2 함수도 경로 변경 해줄것
 		        try{
 		            // BufferedWriter / FileWriter를 조합 사용 (속도 향상)
@@ -75,7 +76,8 @@ void memo2() {  // windows 버전
 		System.out.println("====Windows 기록일지 오픈 ====");
 		 try{ // 예외 처리
 	         //파일 객체 생성
-	        File file2 = new File("D:\\hoon\\WorkOut_Beta.txt"); // windows 버전          
+	        File file2 = new File("C:\\hoon\\WorkOut_Beta.txt"); // windows 버전          
+//	        File file2 = new File("D:\\hoon\\WorkOut_Beta.txt");
 	         // 무조건 memo2 함수도 경로 변경 해줄것
 	         //스캐너로 파일 읽기
 	         Scanner scan = new Scanner(file2);
@@ -103,10 +105,11 @@ public class Main {
 		
 		boolean cnd = true;
 		while (cnd ) {
-			System.out.println("============메인 메뉴============  |");
-			System.out.print("1.운동 추가 | 2.운동 삭제 | 3.운동 조회 |"
-							+ "\n4.기록 조회 | 5.기록 저장 | 0. 종료    |");
-			System.out.println("\n===============================  |");
+			System.out.println("============메인 메뉴============ |");
+			System.out.print("1.운동 추가 | 2.운동 삭제 | 3.운동 조회   |\n"
+							+"4.기록 조회 | 5.기록 저장 | 6. CLEAR  |\n"
+							+"0. Program EXIT....             |\n");
+			System.out.println("\n=============================== |");
 			System.out.print("입력 >  ");
 			int sel = sc.nextInt();
 			sc.nextLine(); // 버퍼 증상 해결
@@ -170,6 +173,12 @@ public class Main {
 					me.memo2();	
 				} else if ( wm.equals(mac) || wm.equals(MAC)) {
 					me.memo1();
+				}
+				break;
+			case 6:
+				System.out.println("화면 클리어 ----");
+				for(int i = 0; i < 15; i++ ) {
+					System.out.println();
 				}
 				break;
 			case 0:
