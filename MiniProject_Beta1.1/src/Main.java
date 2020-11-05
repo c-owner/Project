@@ -106,6 +106,20 @@ public class Main {
 		
 		boolean cnd = true;
 		while (cnd ) {
+			String os = System.getProperty(
+					"os.name").toLowerCase(); 
+			if (os.contains("win")) {
+				System.out.println("User OS : Windows"); 
+			} 
+			else if (os.contains("mac")) 
+			{ System.out.println("User OS : Mac"); 
+			}else if (os.contains("nix") || os.contains("nux") || os.contains("aix")) 
+			{ System.out.println("User OS : Unix"); 
+			} else if (os.contains("linux")) { 
+				System.out.println("User OS : Linux");
+			} else if (os.contains("sunos")) { 
+				System.out.println("User OS : Solaris");
+			}
 		
 			System.out.println("============메인 메뉴============ ");
 			System.out.print("1.운동 추가 | 2.운동 삭제 | 3.운동 조회   \n"
@@ -123,7 +137,6 @@ public class Main {
 				
 				System.out.print("운동의 세트 수 : ");
 				int set = sc.nextInt();
-			
 				
 				System.out.print("몇 개 수행합니까? : ");
 				int cnt = sc.nextInt();
@@ -171,32 +184,52 @@ public class Main {
 				for (int cls = 0; cls < 15; cls++) { // 화면클리어 
 					System.out.println(); // 화면 클리어 
 					}
-				System.out.println("사용자 컴퓨터가 [Windows]라면 w를 입력 "
-						+ "\n [Unix]라면 m 입력 \n"
-						+ "***운영체제를 다르게 선택해도 진행하지만 정상적인 작동을 하지 않습니다.***");
-				wm = sc.nextLine();
-				if ( wm.equals(win) || wm.equals(WIN)) {
-					me.memoView2();	
-				} else if ( wm.equals(mac) || wm.equals(MAC)) {
+				System.out.println("사용자의 운영체제를 파악중입니다.");
+				os = System.getProperty(
+						"os.name").toLowerCase(); 
+				if (os.contains("win")) {
+					System.out.println("사용자의 운영체제는 Windows입니다.");
+					me.memoView2(); // 윈도우 메모 
+				} else if (os.contains("mac")) {
+					System.out.println("사용자의 운영체제는 Mac OS입니다.");
 					me.memoView1();
 				}
+//				System.out.println("사용자 컴퓨터가 [Windows]라면 w를 입력 "
+//				+ "\n [Unix]라면 m 입력 \n"
+//				+ "***운영체제를 다르게 선택해도 진행하지만 정상적인 작동을 하지 않습니다.***");
+//				wm = sc.nextLine();
+//				if ( wm.equals(win) || wm.equals(WIN)) {
+//					me.memoView2();
+//				} else if ( wm.equals(mac) || wm.equals(MAC)) {
+//					me.memoView1();
+//				}
 				System.out.println();
 				break;
 			case 5: // 기록 저장 
 				for (int cls = 0; cls < 15; cls++) { // 화면클리어 
 					System.out.println(); // 화면 클리어 
 					}
-				System.out.println("기록을 저장하기 전 안내 메시지");
-				// 타이머 기능 추가 예정 sync메소드
-				System.out.println("사용자 컴퓨터가 [Windows]라면 w를 입력 "
-						+ "\n [Unix]라면 m 입력 \n"
-						+ "***운영체제를 다르게 선택해도 진행하지만 정상적인 작동을 하지 않습니다.***");
-				wm = sc.nextLine();
-				if ( wm.equals(win) || wm.equals(WIN)) {
-					me.memo2();	
-				} else if ( wm.equals(mac) || wm.equals(MAC)) {
+				System.out.println("사용자의 운영체제를 파악중입니다.");
+				os = System.getProperty(
+						"os.name").toLowerCase(); 
+				if (os.contains("win")) {
+					System.out.println("사용자의 운영체제는 Windows입니다.");
+					me.memo2(); // 윈도우 메모 
+				} else if (os.contains("mac")) {
+					System.out.println("사용자의 운영체제는 Mac OS입니다.");
 					me.memo1();
 				}
+//				System.out.println("기록을 저장하기 전 안내 메시지");
+//				System.out.println("사용자 컴퓨터가 [Windows]라면 w를 입력 "
+//						+ "\n [Unix]라면 m 입력 \n"
+//						+ "***운영체제를 다르게 선택해도 진행하지만 정상적인 작동을 하지 않습니다.***");
+//				wm = sc.nextLine();
+//				if ( wm.equals(win) || wm.equals(WIN)) {
+//					me.memo2();	
+//				} else if ( wm.equals(mac) || wm.equals(MAC)) {
+//					me.memo1();
+//				}
+
 				break;
 			case 6:
 				for(int i = 0; i < 25; i++ ) {
