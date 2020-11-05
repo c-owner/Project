@@ -140,13 +140,13 @@ public class Main {
 				os = System.getProperty(
 						"os.name").toLowerCase(); 
 				if (os.contains("win")) {
-					System.out.println("사용자의 운영체제는 Windows입니다.");
-					System.out.println("사용자의 운영체제는 Mac OS입니다.\n\t *** Warning ***");
+					System.out.println("사용자의 운영체제는 Windows입니다."
+							+ "\n\t*** Warning ***");
 					System.out.println("*** 진행하면 되돌릴 수 없습니다. 그래도 진행하시겠습니까? ***");
 					System.out.println("\t Y / N "); // YES Next <-> No Previous
 					String a = sc.nextLine();
 					if ( a.equals(y) || a.equals(Y) ) {
-						System.out.println(" *** LAST WARNING ***\n    정말 삭제합니까?\n 입력 >");
+						System.out.print("\n *** LAST WARNING ***\n    정말 삭제합니까?\n 입력 >");
 						a = sc.nextLine();
 						if ( a.equals(y) || a.equals(Y) ) {
 							me.memoDeleteWin(); //메모 삭제 함수 진행

@@ -12,12 +12,11 @@ public class Memo {
 		 public Memo() {
 			 super();
 		}
-		void memo1() {  // mac 버전 
+	public void memo1() {  // mac 버전 
 			
 			String txt;     // 기록용 변수 선언
 			   System.out.print("기록하실 내용을 입력하세요 : ");
 				 txt = sc.nextLine(); // 기록을 하기 위한 입력값
-				 // 아니 근데 줄바꿈 좀 하고싶은데..
 			    String fileName = "/Users/iyu/Desktop/GitHub Project/Project//DiaryMemo.txt";
 			        try{
 			            // BufferedWriter / FileWriter를 조합 사용 (속도 향상)
@@ -32,7 +31,7 @@ public class Memo {
 			        } 
 			        System.out.println();
 		}
-	void memo2() {  // windows 버전 
+	public void memo2() {  // windows 버전 
 			
 			String txt;     // 기록용 변수 선언
 			   System.out.print("기록하실 내용을 입력하세요 : ");
