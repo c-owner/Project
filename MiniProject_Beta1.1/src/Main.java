@@ -107,11 +107,11 @@ public class Main {
 		boolean cnd = true;
 		while (cnd ) {
 		
-			System.out.println("============메인 메뉴============ |");
-			System.out.print("1.운동 추가 | 2.운동 삭제 | 3.운동 조회   |\n"
-							+"4.기록 조회 | 5.기록 저장 | 6. CLEAR  |\n"
-							+"0. Program EXIT....             |\n");
-			System.out.println("\n=============================== |");
+			System.out.println("============메인 메뉴============ ");
+			System.out.print("1.운동 추가 | 2.운동 삭제 | 3.운동 조회   \n"
+							+"4.기록 조회 | 5.기록 저장 | 6. CLEAR  \n"
+							+"0. Program EXIT....             \n");
+			System.out.println("\n===============================");
 			System.out.print("입력 >  ");
 			int sel = sc.nextInt();
 			sc.nextLine(); // 버퍼 증상 해결
@@ -171,8 +171,9 @@ public class Main {
 				for (int cls = 0; cls < 15; cls++) { // 화면클리어 
 					System.out.println(); // 화면 클리어 
 					}
-				System.out.println("사용자 컴퓨터가 Windows라면 w를 입력 "
-						+ "\n Unix라면 m 입력 ");
+				System.out.println("사용자 컴퓨터가 [Windows]라면 w를 입력 "
+						+ "\n [Unix]라면 m 입력 \n"
+						+ "***운영체제를 다르게 선택해도 진행하지만 정상적인 작동을 하지 않습니다.***");
 				wm = sc.nextLine();
 				if ( wm.equals(win) || wm.equals(WIN)) {
 					me.memoView2();	
@@ -187,8 +188,9 @@ public class Main {
 					}
 				System.out.println("기록을 저장하기 전 안내 메시지");
 				// 타이머 기능 추가 예정 sync메소드
-				System.out.println("사용자 컴퓨터가 Windows라면 w를 입력 "
-						+ "\n Unix라면 m 입력 ");
+				System.out.println("사용자 컴퓨터가 [Windows]라면 w를 입력 "
+						+ "\n [Unix]라면 m 입력 \n"
+						+ "***운영체제를 다르게 선택해도 진행하지만 정상적인 작동을 하지 않습니다.***");
 				wm = sc.nextLine();
 				if ( wm.equals(win) || wm.equals(WIN)) {
 					me.memo2();	
@@ -197,8 +199,7 @@ public class Main {
 				}
 				break;
 			case 6:
-				System.out.println("화면 클리어 ----");
-				for(int i = 0; i < 15; i++ ) {
+				for(int i = 0; i < 25; i++ ) {
 					System.out.println();
 				}
 				break;
