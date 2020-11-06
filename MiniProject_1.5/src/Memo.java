@@ -24,7 +24,7 @@ public class Memo {
 			// BufferedWriter / FileWriter를 조합 사용 (속도 향상)
 			BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
 			fw.write(txt);
-			fw.write("\n"); // 줄바꿈 !! 중요!★
+			fw.write("\n"); // 줄바꿈 !! 중요!★ unix기반은 \n만 하면됨 
 			fw.flush(); // stream에 남아있는 데이터를 강제로 내보내기 
 			// ex) 수도꼭지 잠그면 호스에 물이 고여있는 것을 빼내기 위해 들어올리는 작업같은 느낌
 			fw.close();
@@ -45,7 +45,7 @@ public class Memo {
 			// BufferedWriter / FileWriter를 조합 사용 (속도 향상)
 			BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
 			fw.write(txt);
-			fw.write("\r\n"); // 줄바꿈 !!
+			fw.write("\r\n"); // 줄바꿈 !! windows는 개행 처리 해줘야함
 			fw.flush(); // stream에 남아있는 데이터를 강제로 내보내기 
 			// ex) 수도꼭지 잠그면 호스에 물이 고여있는 것을 빼내기 위해 들어올리는 작업같은 느낌
 			fw.close();
@@ -71,7 +71,6 @@ public class Memo {
 		}
 		// 폴더가 제대로 있는지 판별부터 하고 난 뒤, 기록을 진행
 	}
-
 	public void folderWindows() { // 폴더 확인 클래스함수
 		String path = "C:\\hoon\\"; // 폴더 경로 선언
 		File Folder = new File(path);// 해당 디렉토리가 없을경우 디렉토리를 생성
@@ -101,20 +100,21 @@ public class Memo {
 			// TODO: handle exception
 		}
 	}
-	public void memoView2() { // Windows
+	public void memoView2() { // Windows 여기가 문제여 여기가 어휴 ..
 		System.out.println("--------Windows Diary OPEN-------");
 		try{ // 예외 처리
 			//파일 객체 생성
-			File file2 = new File("C:\\hoon\\WorkOut_Diary.txt"); // windows 버전          
+			File file = new File("C:\\hoon\\WorkOut_Diary.txt"); // windows 버전          
 			System.out.println("Directory = C:\\hoon\\WorkOut_Diary.txt");
 			//스캐너로 파일 조회  
-			Scanner scan = new Scanner(file2);
+			Scanner scan = new Scanner(file);
 			while(scan.hasNextLine()){
 				System.out.println(scan.nextLine());
-			}	
-		}catch (FileNotFoundException e) {
+			} 	
+		} catch (FileNotFoundException e) {
 			// TODO: handle exception
 		}
+		
 	}
 	//	---------------------------------------------------------------
 	public void memoDeleteMac() { // Mac
@@ -128,12 +128,14 @@ public class Memo {
 						System.out.println(files[i].getName()+" 삭제 성공"); 
 					} else { 
 						System.out.println(files[i].getName()+" 삭제 실패"); 
+						System.out.println("HINT => 프로그램을 종료 후 다시 시도 하십시오.");
 					} 
 				} 
 			} if(file.delete()) {  // 파일이 삭제 됐다면 
-				System.out.println("파일 삭제 성공"); 
+				System.out.println("파일 삭제 성 공"); 
 			} else { 
 				System.out.println("ERROR ** 파일 삭제 실패"); 
+				System.out.println("HINT => 프로그램을 종료 후 다시 시도 하십시오.");
 			} 
 		} else { 
 			System.out.println("파일이 존재하지 않습니다."); 
@@ -152,12 +154,14 @@ public class Memo {
 						System.out.println(files[i].getName()+" 삭제 성공"); 
 					} else { 
 						System.out.println(files[i].getName()+" 삭제 실패"); 
+						System.out.println("HINT => 프로그램을 종료 후 다시 시도 하십시오.");
 					} 
 				} 
 			} if(file.delete()) {  // 파일이 삭제 됐다면 
 				System.out.println("파일 삭제 성공"); 
 			} else { 
-				System.out.println("ERROR ** 파일 삭제 실패"); 
+				System.out.println("ERROR ** 파일 삭제 실패 **");
+				System.out.println("HINT => 프로그램을 종료 후 다시 시도 하십시오.");
 			} 
 		} else { 
 			System.out.println("파일이 존재하지 않습니다."); 
