@@ -62,7 +62,7 @@ public class Memo {
 			try {
 				Folder.mkdirs(); // 폴더 생성 midir은 써보니까 마지막 폴더를 가기위한 폴더가 이미 있어야함
 				//			     mkdirs는 그 폴더를 가기위한 모든 폴더를 만들어줌
-				System.out.println("현재 디렉토리가 올바르지 않아 새로운 폴더가 생성되었습니다.");
+				System.out.println("현재 디렉토리가  올바르지 않아 새로운 폴더가 생성되었습니다.");
 			} catch (Exception e) {
 				e.getStackTrace();
 			}
