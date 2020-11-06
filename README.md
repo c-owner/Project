@@ -1,5 +1,6 @@
 # Project
 
+git push --set-upstream origin master
 
 MiniProject_Complete
 - 클래스 세분화
