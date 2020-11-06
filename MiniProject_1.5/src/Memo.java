@@ -2,11 +2,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Memo {
-	// 기록 클래스 운동을 상속받아 운동 리스트를 호출할 예정
+	// 
 	Scanner sc = new Scanner(System.in);
 	int day,time; // 날짜와 운동한 시간이 필요  
 
@@ -50,7 +49,7 @@ public class Memo {
 			// ex) 수도꼭지 잠그면 호스에 물이 고여있는 것을 빼내기 위해 들어올리는 작업같은 느낌
 			fw.close();
 		} catch(Exception e){
-			e.printStackTrace();
+			e.printStackTrace();// 에러 메시지 발생의 근원지를 찾아 메시지 출력
 		} 
 		System.out.println();
 	}

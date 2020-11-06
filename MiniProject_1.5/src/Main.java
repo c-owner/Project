@@ -6,7 +6,9 @@ import java.util.Scanner;
   해결 : 기록삭제는 프로그램을 재실행(Run)을 하고나서 바로 기록삭제하면 가능.
 * Patch ::
 * + 기록을 작성할 때 지정된 경로가 존재하지 않다면 디렉토리까지 폴더 생성
-* + 
+* + 디렉토리 생성 
+* 
+* 디렉토리 삭제까지 하면 그 내용물까지 다 삭제되면 단점으로 다가 올 수 있어서  
 */
 
 
@@ -26,7 +28,7 @@ public class Main {
 		boolean cnd = true;
 		while (cnd ) {
 			String os = System.getProperty(
-					"os.name").toLowerCase(); 
+					"os.name").toLowerCase();
 			if (os.contains("win")) {
 				System.out.println("User OS : Windows"); 
 			} 
@@ -66,7 +68,6 @@ public class Main {
 				for (int cls = 0; cls < 15; cls++) { // 화면클리어 
 					System.out.println(); // 화면 클리어 
 					}
-				
 				if(set <= 0 || cnt <= 0 && sec <= 0) {
 					System.out.println("WARNING : 세트 수는 1이상 입력하셔야 합니다. 처음으로 돌아갑니다. ");
 					continue;
@@ -97,7 +98,6 @@ public class Main {
 					System.out.println(); // 화면 클리어 
 					}
 				list.showAllWorkout(); // 조회 
-				System.out.println("------------ CLOSE -----------"); 
 				break;
 			case 4: // 기록 조회 
 				for (int cls = 0; cls < 15; cls++) { // 화면클리어 
