@@ -34,9 +34,11 @@ public class WorkoutArrayList {
 		}
 		
 		public void showAllWorkout() {
+			System.out.println("------------ OPEN -----------"); 
 			for (WorkOut m : list ){
 				System.out.println(m);
 			}
+			System.out.println("------------ CLOSE -----------"); 
 		}
 
 		
