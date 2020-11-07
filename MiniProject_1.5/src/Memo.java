@@ -19,7 +19,7 @@ public class Memo {
 		String txt;     // 기록용 변수 선언
 		System.out.print("기록하실 내용을 입력하세요 : ");
 		txt = sc.nextLine(); // 기록을 하기 위한 입력값
-		String fileName = "/Users/iyu/Desktop/GitHub Project/Project//DiaryMac.txt";
+		String fileName = "/Users/iyu/Desktop/GitHub Project/DiaryMac.txt";
 		try{
 			// BufferedWriter / FileWriter를 조합 사용 (속도 향상)
 			BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
@@ -56,7 +56,7 @@ public class Memo {
 	}
 	//	--------------------------------------------------------------
 	public void folderMac() { // 폴더 확인 함수
-		String path = "/Users/iyu/Desktop/GitHub Project/Project//DiaryMac.txt"; // 폴더 경로 선언
+		String path = "/Users/iyu/Desktop/GitHub Project/"; // 폴더 경로 선언
 		File Folder = new File(path);// 해당 디렉토리가 없을경우 디렉토리를 생성
 		if (!Folder.exists()) {
 			try {
@@ -91,7 +91,7 @@ public class Memo {
 		System.out.println("--------MAC Diary OPEN-------");
 		try{ // 예외 처리
 			//파일 객체 생성
-			File file = new File("/Users/iyu/Desktop/GitHub Project/Project//DiaryMac.txt"); // MAC버전
+			File file = new File("/Users/iyu/Desktop/GitHub Project/DiaryMac.txt"); // MAC버전
 			//스캐너로 파일 읽기
 			Scanner scan = new Scanner(file);
 			while(scan.hasNextLine()){
@@ -119,7 +119,7 @@ public class Memo {
 	//	---------------------------------------------------------------
 	public void memoDeleteMac() { // Mac
 		System.out.println("--------MAC TXT DELETE --------");
-		File file = new File("/Users/iyu/Desktop/GitHub Project/Project//DiaryMac.txt"); 
+		File file = new File("/Users/iyu/Desktop/GitHub Project/DiaryMac.txt"); 
 		if( file.exists() ) {  // 파일이 존재하는가~~ 
 			if(file.isDirectory()) { // 파일 경로 맞는지 확인  
 				File[] files = file.listFiles(); 
