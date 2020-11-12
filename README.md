@@ -2,6 +2,12 @@
 
 git push --set-upstream origin master
 
+-------------
+오목 게임 프로그램 
+
+학교 학생 성적 관리 프로그램 / 장학금 여부 O,X
+학점 체크, 전체 성적 총합 및 평균 
+-----------------
 MiniProject_Complete
 - 클래스 세분화
 - 기록 삭제 기능 추가
