@@ -36,7 +36,7 @@ public class Main {
 					score += 10; // 점수 상승
 					System.out.println("\t 현재 점수 "+score);
 				} else {
-					System.out.print("오답!! 요것도 모르네 ㅋㅋ루삥뽕\n");
+					System.out.print("오답!! 요것도 모르네 ㅋㅋ\n");
 					score -= 10;
 					System.out.println("\t 현재 점수 "+score);
 				}

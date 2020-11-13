@@ -1,4 +1,3 @@
-package OhMok;
 
 public class OmokA implements OmokB {
 

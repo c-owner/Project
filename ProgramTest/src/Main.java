@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -13,48 +12,48 @@ public class Main {
 		int rank[];
 		int[] notJoin;
 		do {
-			System.out.print("ÀÎ¿ø¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä. 1~10¸í >");
+			System.out.print("ì¸ì›ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”. 1~10ëª… >");
 			cnt = sc.nextInt();
 			if ( cnt == 0 ) {
-				cnt = 5; // default ÃÊ±âÀÎ¿ø °ª
+				cnt = 5; // default ì´ˆê¸°ì¸ì› ê°’
 			}
 		} while (cnt < 1 || cnt > 10);
-		// ¸Ş¸ğ¸® ÇÒ´ç
+		// ë©”ëª¨ë¦¬ í• ë‹¹
 		num = new int[cnt];
 		korEng = new int[cnt][3];
 		sum = new int[cnt];
-		 notJoin = new int[cnt]; // °á¼®È½¼ö
+		notJoin = new int[cnt]; // ê²°ì„íšŸìˆ˜
 		rank = new int[cnt]; 
 		int total[] = new int[6];
 		int avg[] = new int[6];
 		char ox[] = new char [cnt];
-		char[] grade1 = new char [cnt]; // ÇĞÁ¡
-		String[] title = { "±¹¾î", "¿µ¾î", "¼öÇĞ" };
-		// ±¹¾î¿Í ¿µ¾î¶ó´Â ¸Ş´º (for¹®¿¡¼­ ½á¸ÔÀ»¿ë)
+		char[] grade1 = new char [cnt]; // í•™ì 
+		String[] title = { "êµ­ì–´", "ì˜ì–´", "ìˆ˜í•™" };
+		// êµ­ì–´ì™€ ì˜ì–´ë¼ëŠ” ë©”ë‰´ (forë¬¸ì—ì„œ ì¨ë¨¹ì„ìš©)
 
 		while(true) {
-			System.out.println("¸Ş´º ÀÔ·Â ");
-			System.out.println("1. ¼ºÀû ÀÔ·ÂÇÏ±â / 2. ÀüÃ¼ ¼ºÀû Ãâ·Â / 3. ÀåÇĞ±İ ´ë»óÀÚ / 4. Á¾·á ");
+			System.out.println("ë©”ë‰´ ì…ë ¥ ");
+			System.out.println("1. ì„±ì  ì…ë ¥í•˜ê¸° / 2. ì „ì²´ ì„±ì  ì¶œë ¥ / 3. ì¥í•™ê¸ˆ ëŒ€ìƒì / 4. ì¢…ë£Œ ");
 			int act = sc.nextInt();
 			if(act == 1) {
 				for (int i = 0; i < cnt; i++) {
-					System.out.print("¹øÈ£ ÀÔ·Â >");
+					System.out.print("ë²ˆí˜¸ ì…ë ¥ >");
 					num[i] = sc.nextInt();
-					for (int j = 0; j < 3; j++) { // ±¹¾î¿Í ¿µ¾î¸¦ ÀÔ·Â ÇÒ °ÍÀÌ±â ¶§¹®¿¡ 2¹ø ¹İº¹
-						System.out.print(title[j] + " Á¡¼ö ÀÔ·Â :");
+					for (int j = 0; j < 3; j++) { // êµ­ì–´ì™€ ì˜ì–´ë¥¼ ì…ë ¥ í•  ê²ƒì´ê¸° ë•Œë¬¸ì— 2ë²ˆ ë°˜ë³µ
+						System.out.print(title[j] + " ì ìˆ˜ ì…ë ¥ :");
 						korEng[i][j] = sc.nextInt();
-						
-						sum[i] += korEng[i][j]; // ÃÑÁ¡°è»ê
-						total[0] += korEng[i][0]; // ±¹¾î ÇÕ°è
-						total[1] += korEng[i][1]; //¿µ¾î ÇÕ°è
-						total[2] += korEng[i][2]; // ¼öÇĞ ÇÕ°è
-						total[4] += sum[i]; // ¸ğµç ÇÕ°è
-						total[5] += sum[i]/cnt; // ¸ğµç Æò±Õ ÇÕ°è
-						avg[0] = total[0]/cnt; // ±¹¾î
-						avg[1] = total[1]/cnt; // ¿µ¾î
-						avg[2] = total[2]/cnt; // ¼öÇĞ
-						avg[4] = total[4]/cnt; // ÇÕ°è Æò±Õ
-						avg[5] = total[5]/cnt; // ÀüÃ¼ Æò±Õ
+
+						sum[i] += korEng[i][j]; // ì´ì ê³„ì‚°
+						total[0] += korEng[i][0]; // êµ­ì–´ í•©ê³„
+						total[1] += korEng[i][1]; //ì˜ì–´ í•©ê³„
+						total[2] += korEng[i][2]; // ìˆ˜í•™ í•©ê³„
+						total[4] += sum[i]; // ëª¨ë“  í•©ê³„
+						total[5] += sum[i]/cnt; // ëª¨ë“  í‰ê·  í•©ê³„
+						avg[0] = total[0]/cnt; // êµ­ì–´
+						avg[1] = total[1]/cnt; // ì˜ì–´
+						avg[2] = total[2]/cnt; // ìˆ˜í•™
+						avg[4] = total[4]/cnt; // í•©ê³„ í‰ê· 
+						avg[5] = total[5]/cnt; // ì „ì²´ í‰ê· 
 						if(sum[i] >= 250) {
 							ox[i] = 'O';
 							grade1[i] = 'A';
@@ -68,22 +67,22 @@ public class Main {
 							ox[i] = 'X';
 							grade1[i] = 'F';
 						}
-						
+
 					}
 				}
 				for(int i = 0; i < cnt; i ++ ) {
-					System.out.print(i+1+"¹øÂ°ÀÇ ÇĞ»ıÀÇ °á¼® È½¼ö ÀÔ·Â >");
+					System.out.print(i+1+"ë²ˆì§¸ì˜ í•™ìƒì˜ ê²°ì„ íšŸìˆ˜ ì…ë ¥ >");
 					for(int j = 0; j < 1; j++) {
 						notJoin[i] = sc.nextInt();
 						total[3] += notJoin[i];
 					}
 				}
 				for (int i = 0; i < cnt; i++) {
-					rank[i] = 1; // ·©Å©¸¦ 1·Î ÃÊ±âÈ­ ½ÃÄÑ³õ°í ¹Ø¿¡¼­ ºñ±³ÇßÀ» ¶§ ³·Àº Á¡¼ö´Â ·©Å©¸¦ ++
+					rank[i] = 1; // ë­í¬ë¥¼ 1ë¡œ ì´ˆê¸°í™” ì‹œì¼œë†“ê³  ë°‘ì—ì„œ ë¹„êµí–ˆì„ ë•Œ ë‚®ì€ ì ìˆ˜ëŠ” ë­í¬ë¥¼ ++
 				}
-				// ¼®Â÷°è»ê
+				// ì„ì°¨ê³„ì‚°
 				for (int i = 0; i < cnt - 1; i++) { 
-					for (int j = i + 1; j < cnt; j++) { // ÀÚ½Å ´ÙÀ½ÀÇ ÀÎµ¦½º¿Í ºñ±³ÇÏ±â À§ÇÑ ÃÊ±â½Ä
+					for (int j = i + 1; j < cnt; j++) { // ìì‹  ë‹¤ìŒì˜ ì¸ë±ìŠ¤ì™€ ë¹„êµí•˜ê¸° ìœ„í•œ ì´ˆê¸°ì‹
 						if (sum[i] > sum[j]) { 
 							rank[j]++; 
 						} else if (sum[i] < sum[j]) { 
@@ -94,7 +93,7 @@ public class Main {
 			}
 			else if ( act == 2 ) {
 				System.out.println("Show All");
-				System.out.println("ÇĞ¹ø\t±¹¾î\t¿µ¾î\t¼öÇĞ\t°á¼®È½¼ö\t  ÇÕ°è\tÆò±Õ\t¼®Â÷\tÇĞÁ¡\tÀåÇĞ±İ¿©ºÎ");
+				System.out.println("í•™ë²ˆ\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tê²°ì„íšŸìˆ˜\t  í•©ê³„\tí‰ê· \tì„ì°¨\tí•™ì \tì¥í•™ê¸ˆì—¬ë¶€");
 				for (int i = 0; i < cnt; i++) {
 					System.out.print(num[i]+"\t"); //
 					for (int j = 0; j < 3; j++) {
@@ -105,11 +104,11 @@ public class Main {
 					System.out.printf("%c\t%c",grade1[i],ox[i]);
 					System.out.println();
 				}
-				System.out.print("\nÇÕ°è: ");
+				System.out.print("\ní•©ê³„: ");
 				for (int i = 0; i < total.length; i++) {
-				System.out.print(" \t  "+total[i]);
+					System.out.print(" \t  "+total[i]);
 				}
-				System.out.print("\nÆò±Õ: ");
+				System.out.print("\ní‰ê· : ");
 				for(int i = 0; i < avg.length; i++) {
 					System.out.print("  \t  "+avg[i]);
 				}
@@ -118,15 +117,15 @@ public class Main {
 			else if ( act == 3 ) {
 				for(int i = 0; i < cnt; i ++ ) {
 					if(grade1[i] == 'A') {
-						System.out.println("ÀåÇĞ±İ ´ë»óÀÚ : "+num[i]);
+						System.out.println("ì¥í•™ê¸ˆ ëŒ€ìƒì : "+num[i]);
 					}
 				}
 			}
-		
 
-			
+
+
 			if(act == 4) {
-				System.out.println("ÁÁÀº ÇÏ·ç ¿´½À´Ï´Ù.");
+				System.out.println("ì¢‹ì€ í•˜ë£¨ ì˜€ìŠµë‹ˆë‹¤.");
 				break;
 			}
 		}

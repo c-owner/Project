@@ -1,5 +1,8 @@
-package OhMok;
 import java.util.Scanner;
+
+/*오목 0.1b ver
+
+game 안내 메시지문 추가 */
 
 public class Main { //  
 	
@@ -23,6 +26,14 @@ public class Main { //
 		System.out.print("오목 게임을 시작 하시겠습니까? (Y/N)");
 		sel = sc.next();
 		if(sel.equals(y)||sel.equals(Y)) { 
+			System.out.print("게임 안내를 들으시겠습니까? (y / n)");
+			sel = sc.next();
+			if(sel.equals(y)||sel.equals(Y)) { 
+				p1.GameTextMessage();
+			}
+			else if (sel.equals(n) || sel.equals(N)) {
+			System.out.println("안내를 스킵 합니다.\n");
+		}
 			System.out.println("게임을 시작합니다. Player1, Player2 순서를 정하세요.");
 			System.out.print("Player1 이름 입력 >");
 			name1 = sc.next(); 
@@ -32,7 +43,8 @@ public class Main { //
 			p1.player2 = name2;
 			System.out.println("플레이어 생성이 종료 되었습니다.");
 			p1.show();
-				boolean loop = true;
+			
+					boolean loop = true;
 			while(loop) { // 플레이어 생성이 종료 되면 게임 시작
 				o1.show(); 
 				System.out.println("X 좌표를 입력하세요.");
@@ -44,10 +56,10 @@ public class Main { //
 				System.out.println(" 다음 턴 입니다. ");
 				// turn이 1이 아니면 2 또는 1 // 턴제 바꿔주기
 //				loop = false; // 누가 이겼는지 설정하고 loop 닫아야함
-				}
+			} // while end
 			System.out.println("게임 종료.");
 			sc.close();
-		} else if (sel.equals(n)|| sel.equals(N)) {
+			} else if (sel.equals(n)|| sel.equals(N)) {
 			System.out.println("프로그램 종료");
 		}
 

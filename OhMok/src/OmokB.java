@@ -1,4 +1,3 @@
-package OhMok;
 
 public interface OmokB {
 	public void show();
