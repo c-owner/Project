@@ -1,5 +1,6 @@
-package MovieManager2_1;
+package MovieManager2_2;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -9,20 +10,28 @@ public class Movie {
 	String movieName;
 	int movieTime;
 	
-	private int TicketNumber;
+	 int TicketNumber;
 	
 	private String userId;
-	private int userPassword;
+	private String userPassword;
 
 	LinkedList movie = new LinkedList();
+	ArrayList users = new ArrayList();
 	
 	public Movie (){}	
 	public Movie(String movieName,int movieTime) {this.movieName=movieName;this.movieTime=movieTime;}
+	// Users -------------
+	public void userSignUp() {
+	}
+	public void userSignIn() {}
+
 	// return = get
-	public void setUserPw(int userPassword) { this.userPassword = userPassword; }
-	public int getUserPw() { return userPassword; }
+	public void setUserId(String userId) {this.userId=userId;}
+	public String getUserId() {return userId;}
+	public void setUserPw(String userPassword) { this.userPassword = userPassword; }
+	public String getUserPw() { return userPassword; }
 	
-	public void userLogin() {}
+	// Admin ------------
 	public void adminLogin() {}
 	public void adminMovieAdd() {
 		Scanner sc = new Scanner(System.in);
@@ -37,6 +46,10 @@ public class Movie {
 //		for(Movie show : movie) {System.out.println(show);}
 		Iterator movieShow = movie.iterator();
 		while(movieShow.hasNext()) {System.out.println(movieShow.next());}
+	}
+	public String userSignUp(String userId, String userPw) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 

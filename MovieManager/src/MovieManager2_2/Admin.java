@@ -1,4 +1,4 @@
-package MovieManager2_1;
+package MovieManager2_2;
 
 import java.util.Scanner;
 
@@ -58,10 +58,6 @@ public class Admin extends Movie {
 	@Override
 	public void adminMovieDelete() {
 		super.adminMovieDelete();
-		return;
-	}
-	@Override
-	public void userLogin() {
 		return;
 	}
 	@Override
