@@ -1,5 +1,10 @@
 # Project
 
+Updated 2020-11-14 
+
+: 프로젝트 작업 시작
+
+------------------------------
 git push --set-upstream origin master
 
 -------------

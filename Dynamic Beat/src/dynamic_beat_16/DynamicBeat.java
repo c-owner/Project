@@ -68,7 +68,7 @@ public class DynamicBeat extends JFrame {
 	private Image selectedImage;
 	private Music selectedMusic;
 	Music introMusic = new Music("introMusic.mp3", true);
-	private int nowSelected = 0; // index 0ºÎÅÍ ½ÃÀÛ
+	private int nowSelected = 0; // index 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	public static Game game;
 	
@@ -93,7 +93,7 @@ public class DynamicBeat extends JFrame {
 		addKeyListener(new KeyListener());
 		
 		introMusic.start();
-		// 0¹ø ºÎÅÍ ½ÃÀÛÇÑ ÀÎµ¦½º
+		// 0ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
 
 
 		exitButton.setBounds(1245, 0, 30, 30);
@@ -155,7 +155,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();
-				// °ÔÀÓ ½ÃÀÛ ÀÌº¥Æ®
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®
 				enterMain();
 
 			}
@@ -222,7 +222,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();
-				// ¿ÞÂÊ ¹öÆ° ÀÌº¥Æ®
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½Ìºï¿½Æ®
 				selectLeft();
 			}
 		});
@@ -253,7 +253,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();
-				// ¿À¸¥ÂÊ ¹öÆ° ÀÌº¥Æ®
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½Ìºï¿½Æ®
 				selectRight();
 			}
 		});
@@ -284,7 +284,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();
-				// ³­ÀÌµµ ½¬¿ò ÀÌº¥Æ®
+				// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®
 				gameStart(nowSelected, "Easy");
 			}
 		});
@@ -315,7 +315,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();
-				// ³­ÀÌµµ ¾î·Á¿ò ÀÌº¥Æ®
+				// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®
 				gameStart(nowSelected, "Hard");
 			}
 		});
