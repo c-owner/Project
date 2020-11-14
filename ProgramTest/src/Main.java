@@ -59,10 +59,10 @@ public class Main {
 						if(sum[i] >= 250) {
 							ox[i] = 'O';
 							grade1[i] = 'A';
-						} else if (sum[i] <= 249){
+						} else if (sum[i] < 250 && sum[i] >= 200){
 							ox[i] = 'X';
 							grade1[i] = 'B';
-						} else if (sum[i] < 200){
+						} else if (sum[i] < 200 && sum[i] >= 150){
 							ox[i] = 'X';
 							grade1[i] = 'C';
 						} else if (sum[i] < 150 ) {
