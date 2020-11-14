@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -19,6 +20,7 @@ public class Main {
 			}
 		} while (cnt < 1 || cnt > 10);
 		// 메모리 할당
+		
 		num = new int[cnt];
 		korEng = new int[cnt][3];
 		sum = new int[cnt];
@@ -104,6 +106,8 @@ public class Main {
 					System.out.printf("%c\t%c",grade1[i],ox[i]);
 					System.out.println();
 				}
+				
+				
 				System.out.print("\n합계: ");
 				for (int i = 0; i < total.length; i++) {
 					System.out.print(" \t  "+total[i]);
