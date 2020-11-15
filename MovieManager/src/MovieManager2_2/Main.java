@@ -1,5 +1,6 @@
 /*
  Ver 2.1
+ 
  updated : 틀 잡기 
  
  --- 예정 ---
@@ -33,7 +34,7 @@ public class Main {
 					System.out.println("현재 Id가 없습니다. 회원가입을 진행합니다.");
 					user1.userSignUp(); }
 					else if (Select2.equals("2")) {user1.userSignIn();}
-					
+					// 여기 까지
 				} else if(Select2.equals("2")) {
 					System.out.print("Id 입력 >"); userId = sc.next();
 					System.out.print("Pw 입력 >"); userPw = sc.next();
