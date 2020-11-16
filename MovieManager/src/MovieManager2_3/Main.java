@@ -10,7 +10,7 @@ User Menu 구성
 */
 
 
-package MovieManager2_2;
+package MovieManager2_3;
 
 import java.util.Scanner;
 

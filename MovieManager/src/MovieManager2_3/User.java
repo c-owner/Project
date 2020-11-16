@@ -2,7 +2,7 @@
  // 여기 수정해야함 << 체크 해볼 것 
   
  */
-package MovieManager2_2;
+package MovieManager2_3;
 
 import java.util.Scanner;
 
