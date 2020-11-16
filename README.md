@@ -1,5 +1,6 @@
 # Project
-
+Upsated 2020-11-17
+DB,DAO,DTO를 이용한 회원가입 로직 구현
 Updated 2020-11-14 
 
 : 프로젝트 작업 시작
