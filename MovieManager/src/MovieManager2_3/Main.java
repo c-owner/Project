@@ -31,6 +31,7 @@ public class Main {
 				Select2 = sc.next();
 				if (Select2.equals("1")){
 					if(Select2.equals("1")) {
+						
 					System.out.println("현재 Id가 없습니다. 회원가입을 진행합니다.");
 					user1.userSignUp(); }
 					else if (Select2.equals("2")) {user1.userSignIn();}

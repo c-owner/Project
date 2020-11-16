@@ -11,7 +11,7 @@ public class User extends Movie {
 	private String userId;
 	private String userPassword;
 	
-	public User() {System.out.println("로그인이 필요합니다.");} //비회원
+	public User() {} //비회원
 	public User(String userId,String userPassword) { //회원
 		System.out.println("----회원모드---- Id:"+userId);
 	this.userId=userId; this.userPassword=userPassword;	
