@@ -39,15 +39,14 @@ public class Admin extends Movie {
 		System.out.println("1. 영화 추가 || 2. 영화 수정 || 3. 영화 삭제 || 4.영화 목록 ||5. 메인 메뉴 ");
 		int select = sc.nextInt(); 
 		if (select == 1 ) {adminMovieAdd();
-		} else if ( select == 2 ) {return;
-		} else if ( select == 3 ) {return;
+		} else if ( select == 2 ) {adminMovieEdit();
+		} else if ( select == 3 ) {adminMovieDelete();
 		} else if ( select == 4 ) {adminMovieShow();
 		} else if( select == 5 ) {break;}
 		}
 	}
 	@Override
 	public void adminMovieAdd() {
-		super.adminMovieAdd();
 		return;
 	}
 	@Override

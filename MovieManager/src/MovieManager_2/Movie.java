@@ -1,6 +1,5 @@
 package MovieManager_2;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -31,7 +30,7 @@ public class Movie extends JFrame{
 		setVisible(true);
 //		setBackground(new Color(0, 0, 0, 0));
 		setLayout(null);
-//		Image introBackground = new ImageIcon(Main.class.getResource("../images/bg.jpg")).getImage();
+		Image introBackground = new ImageIcon(Main.class.getResource("../images/bg.jpg")).getImage();
 		
 	}
 	public void paint(Graphics g) {
@@ -40,7 +39,6 @@ public class Movie extends JFrame{
 		screenDraw(screenGraphic);
 		g.drawImage(screenImage, 0, 0, null);
 	}
-	
 	public void screenDraw(Graphics g) {
 		g.drawImage(introBackground, 0, 0, null);
 		paintComponents(g);
