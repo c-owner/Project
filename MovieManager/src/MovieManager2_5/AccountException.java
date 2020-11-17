@@ -22,7 +22,6 @@ public class AccountException {
 			throw new AuthenException("아이디는 영문+숫자를 입력해야 합니다.");
 		}
 	}
-	
 	public void pwCheck(String pw1,String pw2) throws AuthenException{
 		int cnt1=0,cnt2=0;
 		
@@ -57,9 +56,9 @@ public class AccountException {
 		if(!check2) throw new AuthenException("통신사는 [KT,SKT,LG]만 입력 가능합니다.");
 	}
 	public void emailCheck(String email) throws AuthenException {
-		boolean check = Pattern.matches("^(.+)@(.+)$", email);
+		boolean check = Pattern.matches("^[A-Za-z0-9]+@(.+)$", email);
 		if(!check) throw new AuthenException("email은 xxxx@yyyy.com 형식으로 입력하세요");
-		
 	}
+
 	
 }
