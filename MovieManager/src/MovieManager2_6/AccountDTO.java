@@ -1,6 +1,6 @@
-package MovieManager2_5;
+package MovieManager2_6;
 
-public class AccountManager {
+public class AccountDTO {
 	
 	private String id,pw,name,gender,birth,email,tel,brand;
 	

@@ -10,7 +10,7 @@ public class AccountDB {
 	public int insertData(AccountDB dto) {
 		int result = 0;
 		
-		Connection conn = DBConn.getConnection();
+		Connection conn = Main.getConnection();
 		PreparedStatement pstmt = null;
 		
 	}
