@@ -1,4 +1,7 @@
-package MovieManager2_4;
+/*
+ * version updated : exception - brand ++
+ */
+package MovieManager2_5;
 
 import java.util.regex.Pattern;
 
@@ -45,13 +48,17 @@ public class AccountException {
 			throw new AuthenException("이름은 한글로 적어야 합니다.");
 		}
 	}
-	public void phoneCheck(String brand, String phone) throws AuthenException{
+	public void phoneCheck(String phone,String brand) throws AuthenException{
 		boolean check = Pattern.matches("(010)-(\\d{3,4})-(\\d{4})",phone);
 		boolean check2 = Pattern.matches("KT|SKT|LG",brand);
 		
 		// java phone numbers regex,  휴대폰 정규 표현식
 		if(!check) throw new AuthenException("전화번호 입력은[010-****-****]로 입력하세요.");
 		if(!check2) throw new AuthenException("통신사는 [KT,SKT,LG]만 입력 가능합니다.");
+	}
+	public void emailCheck(String email) throws AuthenException {
+		boolean check = Pattern.matches("^(.+)@(.+)$", email);
+		if(!check) throw new AuthenException("email은 xxxx@yyyy.com 형식으로 입력하세요");
 		
 	}
 	
