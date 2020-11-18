@@ -28,7 +28,6 @@ public class AccountDAO {
 			pstmt.setString(5, dto.getBirth());
 			pstmt.setString(6, dto.getEmail());
 			pstmt.setString(7, dto.getTel());
-			pstmt.setString(8, dto.getBrand());
 			
 			result = pstmt.executeUpdate();
 			
@@ -105,7 +104,6 @@ public class AccountDAO {
 				dto.setGender(rs.getString("gender"));
 				dto.setBirth(rs.getString("Birth"));
 				dto.setEmail(rs.getString("email"));
-				dto.setBrand(rs.getString("brand"));
 				dto.setTel(rs.getString("tel"));
 				
 				lists.add(dto);
@@ -140,7 +138,6 @@ public class AccountDAO {
 				dto.setGender(rs.getString("gender"));
 				dto.setBirth(rs.getString("Birth"));
 				dto.setEmail(rs.getString("email"));
-				dto.setBrand(rs.getString("brand"));
 				dto.setTel(rs.getString("tel"));
 				
 				lists.add(dto);

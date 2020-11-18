@@ -14,7 +14,7 @@ public class Account {
 		String pw2 = null;
 		boolean id = true;
 		boolean pw = true;
-		boolean name=true,gender=true,brand=true,tel=true;
+		boolean name=true,gender=true,tel=true;
 		System.out.println("\t회원가입");
 		System.out.println("-------------");
 
@@ -63,10 +63,12 @@ public class Account {
 					System.out.println(e.toString());
 				}
 			} while (gender);
+
 			System.out.print("생일[yyyy-mm-dd] >");
 			dto.setBirth(sc.next());
 			System.out.print("이메일[xxxx@gmail.com] >");
 			dto.setEmail(sc.next());
+			
 			do {
 				try {
 //					System.out.print("통신사[KT/SKT/LG] >");
@@ -77,10 +79,10 @@ public class Account {
 					tel = false;
 				} catch (AuthenException e) {
 					System.out.println(e.toString());
-				}
-			} while(tel); // 여기 brand
+				} // 왜 ,,, 
+			} while(tel); // brand 제거
 			int result = dao.insertData(dto);
-			if(result != 0 ) {
+			if(result != 0) {
 				System.out.println("\n***회원가입을 축하드립니다!!***\n");
 				System.out.println("----[회원가입 정보 확인]----");
 				System.out.println(dto.toString());
@@ -103,8 +105,6 @@ public class Account {
 			
 			System.out.print("이메일 확인[xxxx@gmail.com] >");
 			dto.setEmail(sc.next());
-			System.out.print("통신사 [KT/SKT/LG] >");
-			dto.setBrand(sc.next());
 			System.out.print("전화번호 [010-xxxx-xxxx] >");
 			dto.setTel(sc.next());
 			int result = dao.updateData(dto);
