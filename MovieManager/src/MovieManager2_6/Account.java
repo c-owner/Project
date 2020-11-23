@@ -86,8 +86,7 @@ public class Account {
 				System.out.println("\n***회원가입을 축하드립니다!!***\n");
 				System.out.println("----[회원가입 정보 확인]----");
 				System.out.println(dto.toString());
-			}
-			else System.out.println("회원가입 실패, 제대로 입력 하였는지"
+			} else System.out.println("회원가입 실패, 제대로 입력 하였는지"
 					+ "다시 확인 하십시오.");
 		} catch (Exception e) {
 			System.out.println(e.toString());

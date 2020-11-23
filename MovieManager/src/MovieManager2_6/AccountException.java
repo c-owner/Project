@@ -30,7 +30,7 @@ public class AccountException {
 			if( (ch>='a' && ch<='z') || (ch>='A' && ch<='Z')) cnt1++;
 			else if(ch>='0'&&ch<'9')cnt2++;
 		}
-		if(cnt1==0 || cnt2==0) {
+		if(cnt1<=0 || cnt2 <=0) {
 			throw new AuthenException("비밀번호는 영문+숫자를 입력해야 합니다.");
 		}
 		if(!pw1.equals(pw2)) throw new AuthenException("PW를 다시 확인하십시오.");
