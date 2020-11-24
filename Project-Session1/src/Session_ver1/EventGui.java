@@ -31,6 +31,12 @@ public class EventGui extends JFrame{
 	JLabel labelPeriod = new JLabel("5~10자 입력: ");
 	JCheckBox checkBox = new JCheckBox("어떤 이벤트 ? ");
 	
+	JCheckBox apple = new JCheckBox("사과");
+	JCheckBox pear = new JCheckBox("배",true);
+	
+	content.add(apple);
+	content.add(pear);
+	
 	checkBox.addChangeListener(new ChangeListener() {
 		// 상태가 변하면 처리할 리스너
 		
