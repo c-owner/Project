@@ -2,12 +2,12 @@ package Corner_Beat16;
 
 public class Track {
 
-	private String titleImage; // ���� �κ� �̹���
-	private String startImage; // ���� ���� â ǥ�� �̹���
-	private String gameImage; // �ش� ���� �������� �� ǥ�� �̹���
-	private String startMusic; // ���� ���� â ����
-	private String gameMusic; //�ش� ���� �������� �� ���� 
-	private String titleName; // �� ���� 
+	private String titleImage; // 
+	private String startImage; // 
+	private String gameImage; // 
+	private String startMusic; //
+	private String gameMusic; // 
+	private String titleName; // 
 	
 	public String getTitleImage() {
 		return titleImage;

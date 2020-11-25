@@ -4,10 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
-import JLayer1.0.1.classes.javazoom.jl.player.Player;
-
-
-
+import jlayer1.0.1.JLayer1.0.1.classes.javazoom.jl.player.Player;
 
 
 public class Music extends Thread {

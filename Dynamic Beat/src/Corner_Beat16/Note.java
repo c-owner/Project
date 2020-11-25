@@ -110,7 +110,7 @@ public class Note extends Thread {
 			close();
 			return "Early";
 		}
-		return "None"; // ������ ���� 
+		return "None";  
 	}
 	
 	public int getY() {

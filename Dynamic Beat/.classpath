@@ -6,11 +6,10 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jlayer">
+	<classpathentry kind="lib" path="C:/hoon/GitHub Project/Project/Dynamic Beat/jl1.0.1.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/hoon/GitHub Project/Project/Dynamic Beat/jl1.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
