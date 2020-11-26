@@ -1,4 +1,4 @@
-package CellPhoneShop_ver1;
+package ver1;
 
 public class AuthenException extends Exception{
 	public AuthenException(String message) {

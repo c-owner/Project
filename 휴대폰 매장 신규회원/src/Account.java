@@ -1,4 +1,4 @@
-package CellPhoneShop_ver1;
+
 
 public class Account {
 	int customerCategory;	//고객 구분,
