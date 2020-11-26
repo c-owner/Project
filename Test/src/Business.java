@@ -1,4 +1,3 @@
-package ver;
 import java.util.Scanner;
 
 public class Business {
@@ -17,28 +16,51 @@ public class Business {
 			System.out.println("1~4번중 선택하세요.");
 			act = sc.nextInt();
 		} while (act < 1 && act > 4 );
-		Seoul h = new Seoul();
-		System.out.print("배달 시간 ? > ");
-		h.time = sc.nextInt();
-		System.out.print("배달량 개수 ? > ");
-		h.cnt = sc.nextInt();
-		deliveryPay(h);
-		if(act==1) {
-			East e2 = new East("장동욱", h.time, h.cnt, h.pay);
-			east[e++] = e2;
-			delivery[i++] = e2;
-		} else if (act == 2 ) {
-			West w2 = new West("박영수", h.time, h.cnt, h.pay);
-			west[w++] = w2;
-			delivery[i++] = w2;
-		}else if(act==3) {
-			South s2 = new South("기영이", h.time, h.cnt, h.pay);
+		
+		if(act == 1 ) {
+			Seoul s = new East(); // 강동지구 선택
+			System.out.print("배달 시간 ? > ");
+			s.time = sc.nextInt(); // 배달 시간
+			System.out.print("배달량 개수 ? > ");
+			s.cnt = sc.nextInt();
+
+			deliveryPay(s); 	// 배달 요금 계산 메소드 자리
+			Seoul east1 = new East("장동욱", s.time, s.cnt, s.pay);
+			east[e++] = east1; // 배열에 저장
+			delivery[i++] = east1;
+		} else if ( act == 2 ) {
+			Seoul s1 = new West(); // 강서지구 선택
+			System.out.print("배달 시간 ? > ");
+			s1.time = sc.nextInt(); // 배달 시간
+			System.out.print("배달량 개수 ? > ");
+			s1.cnt = sc.nextInt();
+
+			deliveryPay(s1);
+			s1 = new West("박영수", s1.time, s1.cnt,s1.pay);
+			west[w++] = s1;
+			delivery[i++] = s1;
+		} else if ( act == 3 ) {
+			Seoul s2 = new South(); 
+			System.out.print("배달 시간 ? > ");
+			s2.time = sc.nextInt(); // 배달 시간
+			System.out.print("배달량 개수 ? > ");
+			s2.cnt = sc.nextInt();
+
+			deliveryPay(s2);
+			s2 = new South("이기영", s2.time, s2.cnt, s2.pay);
 			south[s++] = s2;
 			delivery[i++] = s2;
-		}else {
-			North n2 = new North("정은이", h.time, h.cnt, h.pay);
-			north[n++] = n2;
-			delivery[i++] = n2;
+		} else if ( act == 4 ) {
+			Seoul s3 = new North();
+			System.out.print("배달 시간 ? > ");
+			s3.time = sc.nextInt(); // 배달 시간
+			System.out.print("배달량 개수 ? > ");
+			s3.cnt = sc.nextInt();
+
+			deliveryPay(s3);
+			s3 = new North("김찬영", s3.time, s3.cnt, s3.pay);
+			north[n++] = s3;
+			delivery[i++] = s3;
 		}
 		return;
 	}
@@ -46,7 +68,7 @@ public class Business {
 	public void Out(Seoul[] e) { // 개별 출력문
 		System.out.println("------------------");
 //		e[0].toString();
-		System.out.println(e+" 입니다.");
+		System.out.println(e[0]+" 입니다.");
 		for(int j = 0; j < e.length; j++ ) {
 			if(e[j] == null ) break;
 			System.out.println(e[j].name+"\t"+e[j].time+"\t"+e[j].cnt+"\t"+e[j].pay+"\n"); 
