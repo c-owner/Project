@@ -20,7 +20,6 @@ public class Note extends Thread {
 		return proceeded;
 
 	}
-
 	public void close() {
 		proceeded = false;
 	}
@@ -43,7 +42,6 @@ public class Note extends Thread {
 		}
 		this.noteType = noteType;
 	}
-
 	public void screenDraw(Graphics2D g) {
 		if(noteType.equals("Space")) {
 			g.drawImage(noteBasicImage, x, y, null);
@@ -51,10 +49,8 @@ public class Note extends Thread {
 		}
 		else {
 			g.drawImage(noteBasicImage, x, y, null);
-
 		}
 	}
-
 	public void drop() {
 		y += Main.NOTE_SPEED;
 		if(y > 620) {
@@ -62,7 +58,6 @@ public class Note extends Thread {
 			close();
 		}
 	}
-
 	@Override
 	public void run() {
 		try {
@@ -79,7 +74,6 @@ public class Note extends Thread {
 			System.out.println(e.getMessage());
 		}
 	}
-	
 	public String judge() {
 		if( y >= 613) {
 			System.out.println("Late");
@@ -112,9 +106,7 @@ public class Note extends Thread {
 		}
 		return "None";  
 	}
-	
 	public int getY() {
 		return y;
 	}
-	
 }
