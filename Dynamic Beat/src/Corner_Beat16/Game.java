@@ -9,8 +9,6 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
-import corner_beat_3.Main;
-
 public class Game extends Thread {
 
 	private static final String String = null;

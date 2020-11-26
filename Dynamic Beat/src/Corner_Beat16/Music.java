@@ -4,8 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
-import jlayer1.0.1.JLayer1.0.1.classes.javazoom.jl.player.Player;
-
+import javazoom.jl.player.Player;
 
 public class Music extends Thread {
 
@@ -18,8 +17,7 @@ public class Music extends Thread {
 	public Music(String name, boolean isLoop) {
 		try {
 			this.isLoop = isLoop;
-			file = new File(Main.
-					class.getResource("../music/" + name).toURI());
+			file = new File(Main.class.getResource("../music/" + name).toURI());
 			fis = new FileInputStream(file);
 			bis = new BufferedInputStream(fis);
 			player = new Player(bis);
