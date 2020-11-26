@@ -1,4 +1,11 @@
 # Project
+
+Updated 2020-11-27 
+- Corner Beat Game - Mac ver & Windows ver patch
+- Library 수정
+- Programming Test (directory Test) 2nd Exam - uploads
+
+------------------
 Updated 2020-11-18
 -휴대폰 매장 신규가입 계약 프로그램 ver1.0
 -운동기록 미니 프로젝트 이름 수정 
