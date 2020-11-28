@@ -1,5 +1,11 @@
 # Project
 
+
+-Updated 2020-11-28
+-> images 수정해야함 포기포기
+
+-----------------------------
+
 Updated 2020-11-27 
 - Corner Beat Game - Mac ver & Windows ver patch
 - Library 수정
