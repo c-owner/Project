@@ -24,10 +24,9 @@ public class NetworkPay {
 				tmp = 10000 * 0.1; // 할인은 기본요금 10%
 				a.discount = (int) tmp;
 				a.monthPay = 104*a.useTime + 15000-a.discount;
-				
 		Company ca = new A(a.name, a.code, 86, 10000, a.useTime, a.discount, a.monthPay);
 		gradeArr[i++] = ca;
-				
+
 			} else if (c.code.equals("B")) {
 				Company b = new B();
 				b.name = c.name; b.code = c.code;
