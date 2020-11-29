@@ -1,4 +1,4 @@
-package Account_ver1;
+package Account_ver2;
 
 
 // Data (data transfer object)  데이터 전송 이동 객체, db처리하는데이용함 
@@ -82,7 +82,7 @@ public class MemberDTO {
 	public String toString() {
 		return "Member [id = "+id+", pwd = "+pw+", name = "+name+", tel = "+tel
 				+", addr = "+addr+", birth = "+birth+", job = "+job+", gender = "
-				+gender+", email = "+email+", profile = "+intro+"]";
+				+gender+", email = "+email+", intro = "+intro+"]";
 	}
 	
 	
