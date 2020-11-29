@@ -1,7 +1,17 @@
 # Project
 
 
--Updated 2020-11-28
+
+Updated 2020-11-29
+
+: DataBase Sign Up - Project Updated 0.2ver
+
+: Bug Log :: ERROR : Sign Up
+
+-----------------------------
+
+- Updated 2020-11-28
+
 -> images 수정해야함 포기포기
 
 -----------------------------
