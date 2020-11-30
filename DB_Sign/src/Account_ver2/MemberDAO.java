@@ -12,9 +12,10 @@ import javax.swing.table.DefaultTableModel;
 public class MemberDAO {
 	private static final String DRIVER = "ORACLE.JDBC.DRIVER.OracleDriver";
 	private static final String URL = "jdbc.oracle:thin:@192.168.0.3:1521:ORCL";
+//	private static final String URL = "jdbc:mysql://127.0.0.1:3306/TB?useSSL=false&user=root&password=0008";
 
-	private static final String USER = "corner"; // DB ID
-	private static final String PASS = "corner"; // DB PW
+	private static final String USER = "root"; // DB ID
+	private static final String PASS = "0008"; // DB PW
 
 	Member_Main mMain;
 

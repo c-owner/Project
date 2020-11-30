@@ -46,7 +46,6 @@ public class Member_Main extends JFrame implements MouseListener,ActionListener{
 		setSize(600,200);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 	}
 	
 	public Vector getColumn() { // 테이블 칼럼
