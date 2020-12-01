@@ -1,4 +1,4 @@
-package Account_0_1b;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,20 +9,22 @@ import java.util.Vector;
 
 import javax.swing.table.DefaultTableModel;
 
-public class MemberDAO {
+public class MemberDBDAO {
+	Connection conn = null;
 //	private static final String DRIVER = "ORACLE.JDBC.DRIVER.OracleDriver";
-	private static final String DRIVER = "com.mysql.jdbc.Driver";
+	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 //	private static final String URL = "jdbc.oracle:thin:@192.168.0.3:1521:ORCL";
-	private static final String URL = "jdbc:mysql://127.0.0.1:3306/userdb";
+//	static String databaseName = "MemberDB";
+	private static final String URL = "jdbc:mysql://localhost:3306/MemberDB?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 //	private static final String URL = "jdbc:mysql://127.0.0.1:3306/TB?useSSL=false&user=root&password=0008";
 
-	private static final String USER = "corner"; // DB ID
+	private static final String USER = "root"; // DB ID
 	private static final String PASS = "0008"; // DB PW
 
 	Member_Main mMain;
 
-	public MemberDAO() {	}
-	public MemberDAO(Member_Main mMain) {
+	public MemberDBDAO() {	}
+	public MemberDBDAO(Member_Main mMain) {
 		this.mMain=mMain;
 		System.out.println("DAO => "+mMain);
 	}
@@ -31,7 +33,7 @@ public class MemberDAO {
 		Connection con = null;
 
 		try {
-			Class.forName(DRIVER); //드라이버 로딩
+			Class.forName(DRIVER).newInstance(); //드라이버 로딩
 			con = DriverManager.getConnection(URL, USER, PASS);// 드라이버 연결!
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -40,15 +42,15 @@ public class MemberDAO {
 	}
 
 	// 회원 정보를 불러올 메소드 
-	public MemberDTO getMemberDTO(String id) {
-		MemberDTO dto = new MemberDTO();
+	public MemberDBDTO getMemberDTO(String id) {
+		MemberDBDTO dto = new MemberDBDTO();
 
 		Connection con = null; // 연결
 		PreparedStatement ps = null; // 명령 
 		ResultSet rs = null; 	// 결과
 		try {
 			con = getConn();
-			String sql = "select * from tb_member where id = ?";
+			String sql = "select * from MemberDAO where id = ?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
 			rs = ps.executeQuery();
@@ -79,7 +81,7 @@ public class MemberDAO {
 		ResultSet rs = null; // 결 과 
 		try {
 			con = getConn();
-			String sql = "select * from tb_member order by name sec ";
+			String sql = "select * from MemberDAO order by name sec ";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
@@ -114,14 +116,14 @@ public class MemberDAO {
 		return data;
 	}
 	// 회원가입 
-	public boolean insertMember(MemberDTO dto) {
+	public boolean insertMember(MemberDBDTO dto) {
 		boolean ok = false;
 		
 		Connection con = null; // 배열
 		PreparedStatement ps = null; //명령
 		try {
 			con = getConn();
-			String sql = "insert into tb_member("+
+			String sql = "insert into MemberDAO("+
 			"id,pw,name,tel,addr,birth,"+
 			"job,gender,email,intro"+
 			"values(?,?,?,?,?,?,?,?,?,?)";
@@ -159,7 +161,7 @@ public class MemberDAO {
 		
 		try {
 			con = getConn();
-			String sql = "delete from tb_member where id = ? and pw = ?";
+			String sql = "delete from MemberDAO where id = ? and pw = ?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
 			ps.setString(2, pw);
@@ -172,7 +174,7 @@ public class MemberDAO {
 		}
 		return ok;
 	}
-	public boolean updateMember(MemberDTO vMem) {
+	public boolean updateMember(MemberDBDTO vMem) {
 		System.out.println("dto="+vMem.toString());
 		boolean ok = false;
 		Connection con = null;
@@ -180,7 +182,7 @@ public class MemberDAO {
 		try {
 			
 			con = getConn();
-			String sql = "update tb_member set name=?, tel=?, addr=?, birth=?, job=?, gender=?"+
+			String sql = "update MemberDAO set name=?, tel=?, addr=?, birth=?, job=?, gender=?"+
 			", email=?, intro=? "+"where id=? and pw=?";
 			
 			ps = con.prepareStatement(sql);
@@ -212,7 +214,7 @@ public class MemberDAO {
 		
 		try {
 			con = getConn();
-			String sql = "select * from tb_member order by name asc";
+			String sql = "select * from MemberDAO order by name asc";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 		// tableModel에 있는 데이터 지우기

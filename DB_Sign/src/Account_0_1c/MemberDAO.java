@@ -1,4 +1,4 @@
-package Account_0_1b;
+package Account_0_1c;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,13 +10,15 @@ import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
 public class MemberDAO {
+	Connection conn = null;
 //	private static final String DRIVER = "ORACLE.JDBC.DRIVER.OracleDriver";
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
 //	private static final String URL = "jdbc.oracle:thin:@192.168.0.3:1521:ORCL";
-	private static final String URL = "jdbc:mysql://127.0.0.1:3306/userdb";
+	static String databaseName = "MemberDB";
+	private static final String URL = "jdbc:mysql://127.0.0.1:3306/"+databaseName;
 //	private static final String URL = "jdbc:mysql://127.0.0.1:3306/TB?useSSL=false&user=root&password=0008";
 
-	private static final String USER = "corner"; // DB ID
+	private static final String USER = "root"; // DB ID
 	private static final String PASS = "0008"; // DB PW
 
 	Member_Main mMain;
@@ -28,15 +30,15 @@ public class MemberDAO {
 	}
 	/* DB연결 메소드 */ // 연결이 웨않되~~~ 웨!!~~
 	public Connection getConn() {
-		Connection con = null;
+		conn = null;
 
 		try {
-			Class.forName(DRIVER); //드라이버 로딩
-			con = DriverManager.getConnection(URL, USER, PASS);// 드라이버 연결!
+			Class.forName(DRIVER).newInstance(); //드라이버 로딩
+			conn = DriverManager.getConnection(URL, USER, PASS);// 드라이버 연결!
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return con;
+		return conn;
 	}
 
 	// 회원 정보를 불러올 메소드 

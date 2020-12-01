@@ -1,4 +1,4 @@
-package Account_0_1b;
+
 
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
@@ -61,11 +61,11 @@ public class MemberFrame extends JFrame implements ActionListener {
 		this.mMain = mMain;
 
 		System.out.println("id = "+id);
-		MemberDAO dao = new MemberDAO();
-		MemberDTO vMem = dao.getMemberDTO(id);
+		MemberDBDAO dao = new MemberDBDAO();
+		MemberDBDTO vMem = dao.getMemberDTO(id);
 		viewData(vMem); // 
 	} 
-	public void viewData(MemberDTO vMem) { //dto의 회원정보를 가지고 화면에 셋팅해줌
+	public void viewData(MemberDBDTO vMem) { //dto의 회원정보를 가지고 화면에 셋팅해줌
 		String id = vMem.getId();
 		String pw = vMem.getPw();
 		String name = vMem.getName();
@@ -244,7 +244,7 @@ public class MemberFrame extends JFrame implements ActionListener {
 			JOptionPane.showMessageDialog(this, "비밀번호 필수 입력");
 			return;
 		}
-		MemberDAO dao = new MemberDAO();
+		MemberDBDAO dao = new MemberDBDAO();
 		boolean ok = dao.deleteMember(id, pw);
 		if(ok) {
 			JOptionPane.showMessageDialog(this, "삭제 완료");
@@ -256,8 +256,8 @@ public class MemberFrame extends JFrame implements ActionListener {
 
 	public void UpdateMember() {
 		// 
-		MemberDTO dto = getViewData();
-		MemberDAO dao = new MemberDAO();
+		MemberDBDTO dto = getViewData();
+		MemberDBDAO dao = new MemberDBDAO();
 		boolean ok = dao.updateMember(dto);
 		if(ok) {
 			JOptionPane.showMessageDialog(this, "수정 완료");
@@ -269,8 +269,8 @@ public class MemberFrame extends JFrame implements ActionListener {
 
 	public void insertMember() {
 		// 화면에서  사용자가 입력한 내용 얻기
-		MemberDTO dto = getViewData(); // 회원정보 얻기
-		MemberDAO dao = new MemberDAO(); // 정보로 DB수정 
+		MemberDBDTO dto = getViewData(); // 회원정보 얻기
+		MemberDBDAO dao = new MemberDBDAO(); // 정보로 DB수정 
 		boolean ok = dao.updateMember(dto);
 		if(ok) {
 			JOptionPane.showMessageDialog(this, "가입이 완료 되었습니다.");
@@ -279,9 +279,9 @@ public class MemberFrame extends JFrame implements ActionListener {
 			JOptionPane.showMessageDialog(this, "가입이 정상 처리가 되지 않았습니다.");
 		}
 	}
-	public MemberDTO getViewData() {
+	public MemberDBDTO getViewData() {
 
-		MemberDTO dto = new MemberDTO();
+		MemberDBDTO dto = new MemberDBDTO();
 		// 화면에서 사용자가 입력한 내용을 얻음
 		String id = tfId.getText();
 		String pw = pfPw.getText();
