@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.DriverManager;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -46,6 +45,7 @@ public class Member_Main extends JFrame implements MouseListener,ActionListener{
 
 		setSize(600,200);
 		setVisible(true);
+		setLocationRelativeTo(null); // 중앙에서 시작
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	

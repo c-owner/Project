@@ -1,5 +1,5 @@
 
-
+ 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,9 +11,9 @@ import javax.swing.table.DefaultTableModel;
 
 public class MemberDBDAO {
 	Connection conn = null;
-//	private static final String DRIVER = "ORACLE.JDBC.DRIVER.OracleDriver";
+//	private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-//	private static final String URL = "jdbc.oracle:thin:@192.168.0.3:1521:ORCL";
+//	private static final String URL = "jdbc:oracle:thin:@192.168.0.3:1521:ORCL";
 //	static String databaseName = "MemberDB";
 	private static final String URL = "jdbc:mysql://localhost:3306/MemberDB?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 //	private static final String URL = "jdbc:mysql://127.0.0.1:3306/TB?useSSL=false&user=root&password=0008";
@@ -26,7 +26,7 @@ public class MemberDBDAO {
 	public MemberDBDAO() {	}
 	public MemberDBDAO(Member_Main mMain) {
 		this.mMain=mMain;
-		System.out.println("DAO => "+mMain);
+		System.out.println("DAO =>"+mMain);
 	}
 	/* DB연결 메소드 */ // 연결이 웨않되~~~ 웨!!~~
 	public Connection getConn() {
@@ -48,6 +48,7 @@ public class MemberDBDAO {
 		Connection con = null; // 연결
 		PreparedStatement ps = null; // 명령 
 		ResultSet rs = null; 	// 결과
+		
 		try {
 			con = getConn();
 			String sql = "select * from MemberDAO where id = ?";
