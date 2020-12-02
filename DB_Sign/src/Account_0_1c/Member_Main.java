@@ -1,11 +1,11 @@
 package Account_0_1c;
 
+
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.DriverManager;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -26,7 +26,7 @@ public class Member_Main extends JFrame implements MouseListener,ActionListener{
 	
 	public Member_Main() {
 		super("회원가입 0.1c");
-		MemberDAO dao = new MemberDAO();
+		MemberDBDAO dao = new MemberDBDAO();
 		v = dao.getMember_Main();
 		System.out.println("v="+v);
 		cols = getColumn();
@@ -46,6 +46,7 @@ public class Member_Main extends JFrame implements MouseListener,ActionListener{
 
 		setSize(600,200);
 		setVisible(true);
+		setLocationRelativeTo(null); // 중앙에서 시작
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
@@ -65,7 +66,7 @@ public class Member_Main extends JFrame implements MouseListener,ActionListener{
 		return col;
 	}
 	public void jTableRefresh() { // 테이블 내용 갱신
-		MemberDAO dao = new MemberDAO();
+		MemberDBDAO dao = new MemberDBDAO();
 		DefaultTableModel model = new DefaultTableModel(dao.getMember_Main(),getColumn());
 		jTable.setModel(model);
 

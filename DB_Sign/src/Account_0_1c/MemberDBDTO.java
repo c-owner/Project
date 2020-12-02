@@ -1,8 +1,9 @@
 package Account_0_1c;
 
 
+
 //Data (data transfer object)  데이터 전송 이동 객체, db처리하는데이용함 
-public class MemberDTO {
+public class MemberDBDTO {
 	
 	private String id;
 	private String pw;
@@ -77,6 +78,7 @@ public class MemberDTO {
 	}
 	
 // DTO 객체 확인
+	// toString 자동생성 우클릭 source -> generate toString -> ok
 	@Override
 	public String toString() {
 		return "Member [id = "+id+", pwd = "+pw+", name = "+name+", tel = "+tel
