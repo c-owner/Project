@@ -1,17 +1,14 @@
 # Project
-
-
-
-Updated 2020-11-29
-
+-------------------------  
+![MainImage](https://images.unsplash.com/photo-1593642532973-d31b6557fa68?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60)
+----------------------------  
+##Updated 2020-11-29  
 : DataBase Sign Up - Project Updated 0.2ver
-
+  
 : Bug Log :: ERROR : Sign Up
 
 -----------------------------
-
-- Updated 2020-11-28
-
+- Updated 2020-11-28  
 -> images 수정해야함 포기포기
 
 -----------------------------
