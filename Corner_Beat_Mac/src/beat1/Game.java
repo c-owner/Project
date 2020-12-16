@@ -87,7 +87,7 @@ public class Game extends Thread {
 		g.setColor(Color.white);
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		g.setFont(new Font("Arial", Font.BOLD, 30));
-		g.drawString(titleName, 20, 702); // � ���� ����
+		g.drawString(titleName, 20, 702); // 곡에 대한 정보
 		g.drawString(difficulty, 1190, 702);
 		g.setColor(Color.DARK_GRAY);
 		g.drawString("A", 270, 609);
@@ -215,7 +215,7 @@ public class Game extends Thread {
 		Beat[] beats = null;
 		if (titleName.equals("Avenged Sevenfold - Afterlife") && difficulty.equals("Easy")) {
 			int startTime = 15460 - Main.REACH_TIME * 1000;
-			int gap = 110; // ������ ����
+			int gap = 110; // 박자의 간격
 			beats = new Beat[] { new Beat(startTime + gap * 2, "D"), new Beat(startTime + gap * 4, "S"),
 					new Beat(startTime + gap * 6, "D"), new Beat(startTime + gap * 8, "S"),
 					new Beat(startTime + gap * 8, "A"), new Beat(startTime + gap * 10, "1"),
@@ -225,7 +225,7 @@ public class Game extends Thread {
 					new Beat(startTime + gap * 24, "S") };
 		} else if (titleName.equals("Avenged Sevenfold - Afterlife") && difficulty.equals("Hard")) {
 			int startTime = 4460 - Main.REACH_TIME * 1000;
-			int gap = 125; // ������ ����
+			int gap = 125; // 박자의 간격
 			beats = new Beat[] { new Beat(startTime + gap * 2, "D"), new Beat(startTime + gap * 4, "S"),
 					new Beat(startTime + gap * 6, "D"), new Beat(startTime + gap * 8, "S"),
 					new Beat(startTime + gap * 8, "A"), new Beat(startTime + gap * 10, "1"),
@@ -235,7 +235,7 @@ public class Game extends Thread {
 					new Beat(startTime + gap * 24, "S") };
 		} else if (titleName.equals("Avenged Sevenfold - Hail To The King") && difficulty.equals("Easy")) {
 			int startTime = 11000 - Main.REACH_TIME * 1000;
-			int gap = 115; // ������ ����
+			int gap = 115; // 박자의 간격
 			beats = new Beat[] { 
 					new Beat(startTime + gap, "D"),
 					new Beat(startTime + gap * 9, "D"), 
@@ -344,7 +344,7 @@ public class Game extends Thread {
 			};  
 		}else if (titleName.equals("Avenged Sevenfold - Hail To The King") && difficulty.equals("Hard")) {
 			int startTime = 4460 - Main.REACH_TIME * 1000;
-			int gap = 125; // ������ ����
+			int gap = 125; // 박자의 간격
 			beats = new Beat[] { 	
 					new Beat(startTime + gap, "D"),
 					new Beat(startTime + gap * 9, "D"), 
@@ -390,7 +390,7 @@ public class Game extends Thread {
 		}
 		else if (titleName.equals("Sum41 - Still Waiting") && difficulty.equals("Easy")) {
 			int startTime = 4460 - Main.REACH_TIME * 1000;
-			int gap = 125; // ������ ����
+			int gap = 125; // 박자의 간격
 			beats = new Beat[] { new Beat(startTime + gap * 2, "D"), new Beat(startTime + gap * 4, "S"),
 					new Beat(startTime + gap * 6, "D"), new Beat(startTime + gap * 8, "S"),
 					new Beat(startTime + gap * 8, "A"), new Beat(startTime + gap * 10, "1"),
@@ -400,7 +400,7 @@ public class Game extends Thread {
 					new Beat(startTime + gap * 24, "S") };
 		} else if (titleName.equals("Sum41 - Still Waiting") && difficulty.equals("Hard")) {
 			int startTime = 4460 - Main.REACH_TIME * 1000;
-			int gap = 125; // ������ ����
+			int gap = 125; // 박자의 간격
 			beats = new Beat[] { new Beat(startTime + gap * 2, "D"), new Beat(startTime + gap * 4, "S"),
 					new Beat(startTime + gap * 6, "D"), new Beat(startTime + gap * 8, "S"),
 					new Beat(startTime + gap * 8, "A"), new Beat(startTime + gap * 10, "1"),

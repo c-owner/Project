@@ -65,7 +65,7 @@ public class DynamicBeat extends JFrame {
 	private Image selectedImage;
 	private Music selectedMusic;
 	Music introMusic = new Music("introMusic.mp3", true);
-	private int nowSelected = 0; // index 0���� ����
+	private int nowSelected = 0; // index 0부터 시작
 
 	public static Game game;
 	
@@ -90,7 +90,7 @@ public class DynamicBeat extends JFrame {
 		addKeyListener(new KeyListener());
 		
 		introMusic.start();
-		// 0�� ���� ������ �ε���
+		// 0번 부터 시작한 인덱스
 
 
 		exitButton.setBounds(1245, 0, 30, 30);
@@ -152,7 +152,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();
-				// ���� ���� �̺�Ʈ
+				// 게임 시작 이벤트
 				enterMain();
 
 			}
@@ -219,7 +219,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();
-				// ���� ��ư �̺�Ʈ
+				// 왼쪽 버튼 이벤트
 				selectLeft();
 			}
 		});
@@ -250,7 +250,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();
-				// ������ ��ư �̺�Ʈ
+				// 오른쪽 버튼 이벤트
 				selectRight();
 			}
 		});
@@ -281,7 +281,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();
-				// ���̵� ���� �̺�Ʈ
+				// 난이도 쉬움 이벤트
 				gameStart(nowSelected, "Easy");
 			}
 		});
@@ -312,7 +312,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();
-				// ���̵� ����� �̺�Ʈ
+				// 난이도 어려움 이벤트
 				gameStart(nowSelected, "Hard");
 			}
 		});
