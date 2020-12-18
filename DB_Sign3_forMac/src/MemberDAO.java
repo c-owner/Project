@@ -12,9 +12,9 @@ import javax.swing.table.DefaultTableModel;
 public class MemberDAO {
 	Connection conn = null;
 	String DRIVER = "com.mysql.cj.jdbc.Driver";
-	String URL = "jdbc:mysql://localhost:3306/MemberDB?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
+	String URL = "jdbc:mysql://localhost:3307/MemberDB?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 	String USER = "root"; // DB ID
-	String PASS = "0008"; // DB pwd
+	String PASS = "password"; // DB pwd
 
 	Member_Main mMain;
 
